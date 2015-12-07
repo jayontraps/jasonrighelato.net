@@ -1,0 +1,29 @@
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.group { display: inline-block; clear: both; }
+/* start commented backslash hack \*/ * html .group { height: 1%; } .group { display: block; } /* close commented backslash hack */
+
+
+
+/* clear floats */
+.clear	{
+    clear: both;
+}
+
+.cf{
+    zoom:1;
+    
+    &:before,
+    &:after{
+        content:" ";
+        display:table;
+    }
+    
+    &:after{
+        clear:both;
+    }
+}
+
+
+.hidden {
+  display: none !important;
+}

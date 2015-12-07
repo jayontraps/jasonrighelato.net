@@ -1,0 +1,105 @@
+.container { 
+	width: 100%;
+	overflow: hidden;
+}
+
+
+[role="navigation"] {
+	background-color: grey;
+	a {
+		color: white;
+	}	
+}
+[role="main"] {
+	background-color: red;
+	color: white;
+}
+
+
+[role="main"]:before,
+[role="main"]:after {
+	content: " ";
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.3);
+}
+[role="main"]:after {
+	left: 100%;
+	background: rgba(0,0,0,.15);
+}
+
+
+
+
+[role="complementary"] {
+	background-color: blue;
+	color: white;	
+}
+
+
+[role="navigation"],
+[role="main"],
+[role="complementary"] {
+	transition: .2s all ease;
+	width: 100%;
+	padding: 5%;
+	display: block;
+	position: relative;	
+}
+
+
+.js {
+
+	[role="navigation"] {
+		margin-left: -100%;
+		float: left;
+	}	
+
+	[role="main"] {
+		margin-left: 0;
+		float: left;
+	}	
+
+	[role="complementary"] {
+		margin-right: -200%;
+		float: left;
+	}	
+
+	.active-nav {
+
+		[role="navigation"] {
+			margin-left: 0;
+			width: 90%;
+		}
+
+		[role="main"]{
+			margin-right: -100%;
+		}
+
+		[role="complementary"] {
+			margin-right: -100%;
+			float: right;
+		}				
+	}
+
+	.active-sidebar {
+
+		[role="navigation"] {
+			margin-left: -100%;
+		}
+
+		[role="main"] {
+			margin-left: -90%;
+		}		
+
+		[role="complementary"] {
+			margin-left: 0;
+			width: 90%;
+		}				
+	}
+}
+
