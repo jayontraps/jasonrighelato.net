@@ -1,0 +1,6 @@
+.page-wrap {
+	display: none;
+	&.on {
+		display: block;
+	}
+}

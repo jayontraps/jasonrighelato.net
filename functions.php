@@ -16,6 +16,14 @@ if ( ! function_exists( 'jr_portfolio_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function jr_portfolio_setup() {
+
+	// override default jQuery version (1.8.2) 
+	if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+	function my_jquery_enqueue() {
+	   wp_deregister_script('jquery');
+	   wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js", false, null);
+	   wp_enqueue_script('jquery');
+	}	
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -116,9 +124,9 @@ add_action( 'widgets_init', 'jr_portfolio_widgets_init' );
 function jr_portfolio_scripts() {
 	wp_enqueue_style( 'jr_portfolio-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'jr_portfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	// wp_enqueue_script( 'jr_portfolio-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'jr_portfolio-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	// wp_enqueue_script( 'jr_portfolio-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
