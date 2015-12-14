@@ -13,7 +13,7 @@ get_header(); ?>
 
 
 
-			<h1>PORTFOLIO PAGE TEMPLATE AGAIN AND AGAIN!!</h1>
+			<h1>PORTFOLIO PAGE TEMPLATE TESTING AGAIN!!</h1>
 	
 
 
