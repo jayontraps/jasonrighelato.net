@@ -11,8 +11,19 @@ get_header(); ?>
 
 		<?php include "inc/inc-work-menu.php"; ?>
 
+
+
+			<h1>PORTFOLIO PAGE TEMPLATE</h1>
+	
+
+
+
+
+
+
+
 		<div data-effeckt-page="page-default">
-	    	<div class="page-wrap on" id="page_default">
+	    	<div class="page-wrap on" id="page_default">	    	
 	    	<h1>Default Page</h1>
 	    		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	    		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
