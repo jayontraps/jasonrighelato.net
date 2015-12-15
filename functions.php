@@ -135,6 +135,11 @@ function jr_portfolio_scripts() {
 add_action( 'wp_enqueue_scripts', 'jr_portfolio_scripts' );
 
 /**
+ * Implement the Custom Post Types.
+ */
+require get_template_directory() . '/inc/custom-post-types.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';

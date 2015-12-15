@@ -4,5 +4,5 @@ node_modules
 webfonts
 img
 images
-js/vendor
+build/js/vendor
 build/js/config.js
