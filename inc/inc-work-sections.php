@@ -1,6 +1,6 @@
 <?php 
 	$args = array(
-		'post_type' => 'portfolio',
+		'post_type' => 'post',
 		'posts_per_page'=> -1,
 		'orderby' => 'meta_value_num',
 		'order' => 'ASC'

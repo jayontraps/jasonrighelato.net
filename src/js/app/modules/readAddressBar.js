@@ -7,9 +7,9 @@ module.exports = function readAddressBar(request, page_state) {
 	window.addEventListener("popstate", function(e) {		
 
 		    // get the slug
-        var pathArray = document.location.pathname.split( '/' );
-        var theIndex = pathArray.length - 2;
-        var slug = pathArray[theIndex];	
+        pathArray = document.location.pathname.split( '/' );
+        theIndex = pathArray.length - 2;
+        slug = pathArray[theIndex];	
 
         // if it's back to the menu
         if (slug === "work") {

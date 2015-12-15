@@ -24,10 +24,10 @@ page_state = {
 
 // "loaded_pages" : [
 // 	{
-// 		json_link: "http://localhost/jasonrighelato/wp-json/wp/v2/portfolio/8"
+// 		json_link: "http://localhost/jasonrighelato/wp-json/wp/v2/posts/8"
 // 		page_id: 8
 // 		page_slug: "birds-of-berkshire-atlas"
-// 		page_url: "http://localhost/jasonrighelato/portfolio/birds-of-berkshire-atlas/"			
+// 		page_url: "http://localhost/jasonrighelato/birds-of-berkshire-atlas/"			
 // 	}
 // ]
 
