@@ -11,30 +11,33 @@
 	<?php if ( $the_query->have_posts() ) : ?>
 
 		<?php $url_array = array(); ?>
-		
-		<div class="work_item_list">
+
+		<div data-effeckt-page="page-list" class="work_menu" >
+
+	    	<div class="page-wrap on" id="page_<?php the_ID(); ?>">
 	
-		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-			<?php
-				// build the REST API URL
-				$root = get_site_url();
-				$apiroot = 'wp-json/wp/v2/portfolio';
-				$id = get_the_ID();								
-				$apiEndPoint = $root . '/' . $apiroot . '/' . $id;
+				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					<?php
+						// build the REST API URL
+						$root = get_site_url();
+						$apiroot = 'wp-json/wp/v2/portfolio';
+						$id = get_the_ID();								
+						$apiEndPoint = $root . '/' . $apiroot . '/' . $id;
 
-				$url_array[$id] = $apiEndPoint;
-			?>			
-				<a 
-					href="<?php the_permalink(); ?>" 
-					class="work-item effeckt-page-transition-button" 
-					data-api="<?php the_ID(); ?>" 					
-					data-effeckt-transition-in="slide-from-left" 
-					data-effeckt-transition-out="slide-to-right" 
-					data-effeckt-transition-page="page-<?php the_ID(); ?>">
-		        		<?php the_title(); ?>
-	        	</a>
-		<?php endwhile; ?>
+						$url_array[$id] = $apiEndPoint;
+					?>			
+						<a 
+							href="<?php the_permalink(); ?>" 
+							class="work_menu_items effeckt-page-transition-button" 
+							data-api="<?php the_ID(); ?>" 					
+							data-effeckt-transition-in="slide-from-left" 
+							data-effeckt-transition-out="slide-to-right" 
+							data-effeckt-transition-page="page-<?php the_ID(); ?>">
+				        		<?php the_title(); ?>
+			        	</a>
+				<?php endwhile; ?>
 
+			</div>
 
 		</div>
 

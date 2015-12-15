@@ -1,14 +1,21 @@
 var isLoaded = require('./isLoaded');
 var transitionToPage = require('./transitionToPage');
+var transitionBackToMenu = require('./transitionBackToMenu');
 
-module.exports = function popstate(request, page_state) {
+module.exports = function readAddressBar(request, page_state) {
 
 	window.addEventListener("popstate", function(e) {		
 
-		// get the slug
+		    // get the slug
         var pathArray = document.location.pathname.split( '/' );
         var theIndex = pathArray.length - 2;
         var slug = pathArray[theIndex];	
+
+        // if it's back to the menu
+        if (slug === "work") {
+          transitionBackToMenu();
+          return;
+        }
 
         // if loaded, find it and show it
        	if (isLoaded(slug, page_state.loaded_pages, request)) {

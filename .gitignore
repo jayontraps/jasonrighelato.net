@@ -5,3 +5,4 @@ webfonts
 img
 images
 js/vendor
+build/js/config.js

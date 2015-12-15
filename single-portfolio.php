@@ -9,16 +9,13 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area work">
+	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main" role="main">
-	
-		<?php include "inc/inc-work-menu.php"; ?>
 	
 			<h1>SINGLE TEMPLATE</h1>
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
-
 
 			<div data-effeckt-page="page-default">
 				<div class="page-wrap on" id="page_default">
@@ -39,7 +36,7 @@ get_header(); ?>
 			<?php endwhile; // End of the loop. ?>
 
 
-			<?php include "inc/inc-work-sections.php"; ?>
+			<a class="back-to-menu" href="<?php bloginfo('url'); ?>/work/"></a>
 
 
 		</main><!-- #main -->

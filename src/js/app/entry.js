@@ -1,7 +1,8 @@
 var ajaxCall = require('./modules/ajaxCall');
-var popstate = require('./modules/popstate');
+var readAddressBar = require('./modules/readAddressBar');
 var isLoaded = require('./modules/isLoaded');
 var transitionToPage = require('./modules/transitionToPage');
+var transitionBackToMenu = require('./modules/transitionBackToMenu');
 
 /* page transitions */
 // var core = require('./modules/animations/core');
@@ -35,10 +36,11 @@ page_state = {
 
 	$(document).ready(function() {
 
+		/* HOVER */
 		// if no touch we can anticipate a click and fire ajaxCall on mouseover
 		if (!Modernizr.touchevents) {
 
-			$('.work_item_list').on('mouseover', 'a', function(event) {
+			$('.work_menu').on('mouseover', 'a', function(event) {
 
 				// get the href
 				request.href = $(this).attr("href");
@@ -57,8 +59,8 @@ page_state = {
 
 
 
-
-		$('.work_item_list').on('click', 'a', function(event) {
+		/* CLICK */
+		$('.work_menu').on('click', 'a', function(event) {
 
 			event.preventDefault();			
 			// get the href
@@ -92,12 +94,22 @@ page_state = {
 
 
 
-
+		/* BROWSERS BACK BUTTON */
 		// add the popstate event handler on the page-portfolio and single-portfolio only
 		// will the event handler remain on other pages??
-		if ($('#primary').hasClass('work')) {
-			popstate(request, page_state);			
+		if ($('#primary').hasClass('work-page')) {
+			readAddressBar(request, page_state);			
 		}
+
+
+		/* BACK TO MENU */
+		$('#to-menu').on('click', function() {
+			// build the 'work' URL
+			var workMenuUrl = jr_portfolio.config.siteUrl + "/work/";
+	        history.pushState( null, null, workMenuUrl );				
+			transitionBackToMenu();
+		});
+
 
 
 	});
