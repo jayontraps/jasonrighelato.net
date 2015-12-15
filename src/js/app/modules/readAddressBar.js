@@ -12,7 +12,7 @@ module.exports = function readAddressBar(request, page_state) {
         slug = pathArray[theIndex];	
 
         // if it's back to the menu
-        if (slug === "work") {
+        if (slug === jr_portfolio.config.workPage) {
           transitionBackToMenu();
           return;
         }

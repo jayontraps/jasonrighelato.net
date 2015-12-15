@@ -54,7 +54,7 @@ page_state = {
 				}
 
 			});
-		};
+		}
 
 
 
@@ -105,7 +105,7 @@ page_state = {
 		/* BACK TO MENU */
 		$('#to-menu').on('click', function() {
 			// build the 'work' URL
-			var workMenuUrl = jr_portfolio.config.siteUrl + "/work/";
+			var workMenuUrl = jr_portfolio.config.siteUrl + "/" + jr_portfolio.config.workPage + "/";
 	        history.pushState( null, null, workMenuUrl );				
 			transitionBackToMenu();
 		});
