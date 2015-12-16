@@ -62,7 +62,7 @@ page_state = {
 
 
 		/* CLICK */
-		$('#app').on('click', 'a', function(event) {
+		$('#app').on('touchstart click', 'a', function(event) {
 
 			event.preventDefault();		
 
