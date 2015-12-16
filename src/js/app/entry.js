@@ -4,10 +4,6 @@ var isLoaded = require('./modules/isLoaded');
 var transitionToPage = require('./modules/transitionToPage');
 var transitionBackToMenu = require('./modules/transitionBackToMenu');
 
-/* page transitions */
-// var core = require('./modules/animations/core');
-// var pageTransitions = require('./modules/animations/pageTransitions');
-
 
 request = {
 	"href" : "",
@@ -97,7 +93,7 @@ page_state = {
 		/* BROWSERS BACK BUTTON */
 		// add the popstate event handler on the page-portfolio and single-portfolio only
 		// will the event handler remain on other pages??
-		if ($('#primary').hasClass('work-page')) {
+		if ($('body').hasClass('work-page')) {
 			readAddressBar(request, page_state);			
 		}
 

@@ -1,25 +1,3 @@
-.work_item_list {
-	position: fixed;
-	z-index: 9999;
-	top: 0;
-	left: 0;
-	width: 100%;
-	background-color: rgba(0,0,0,.5);
-	@include reset;
-	color: $white;
-}
-
-.work-item {
-  display: block;
-  color:$white;
-  &:hover {
-    color:$white;
-  }
-  &:visited {
-    color:$white;
-  }
-}
-
 // Reset
 * {
   margin: 0;
@@ -34,39 +12,20 @@
   transition: none !important;
 }
 
-// clearfix
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-:root { // rem
-  font-size: large;
-  line-height: 1.4;
-  @media (max-width: 500px) {
-    font-size: small;
-  }
-}
 
 // is needed for overlay
 html, body {
-  height: 100%;
+  // height: 100%;
   // testing
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 body {
-  background: #eee;
-  font-family: Sans-serif;
-  overflow: hidden; // for logo effect
+  // overflow: hidden; // for logo effect
 
   // This is kinda good for performance overall
   // But... you can't fixed position inside it then
   // transform: translateZ(0);
-
-  @media (max-width: 500px) {
-  }
 }
 
 // Layout
@@ -74,34 +33,4 @@ body {
   // Required for non-janky off-screen squishing
   float: right;
   width: 100%;
-}
-
-.effeckt {
-  padding: 2rem;
-  background: white;
-  margin: 0 0 1rem 0;
-  @media (max-width: 500px) {
-    padding: 1.5rem;
-  }
-  header {
-    margin: 0 0 1rem 0;
-    border-bottom: 2px solid #eee;
-    position: relative;
-    .source {
-      position: absolute;
-      right: 0;
-      bottom: 2px;
-      @media (max-width: 500px) {
-        position: relative;
-        display: block;
-        margin: 0.2rem 0;
-      }
-    }
-    &:nth-of-type(n+2) { // all but first
-      margin-top: 2rem;
-    }
-  }
-}
-.button-group {
-  line-height: 2;
 }

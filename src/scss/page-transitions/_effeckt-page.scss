@@ -1,0 +1,32 @@
+[data-effeckt-page] {
+
+	background-color: pink;
+
+	&:nth-child(5) {
+		background-color: red;
+	}
+	&:nth-child(4) {
+		background-color: blue;
+	}
+	&:nth-child(3) {
+		background-color: green;
+	}
+}
+
+
+.back-to-menu {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	position: fixed;
+	z-index: 11;
+	top: 20px;
+	right: 20px;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.work-page {
+	@include scrollbars(.5em, slategray);
+}

@@ -12,9 +12,9 @@
 
 		<?php $url_array = array(); ?>
 
-		<div data-effeckt-page="page-list" class="work_menu" >
+		<!-- <div data-effeckt-page="page-list" class="work_menu" > -->
 
-	    	<div class="page-wrap on" id="page_<?php the_ID(); ?>">
+	    	
 	
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					<?php
@@ -31,15 +31,16 @@
 							class="work_menu_items effeckt-page-transition-button" 
 							data-api="<?php the_ID(); ?>" 					
 							data-effeckt-transition-in="slide-from-left" 
-							data-effeckt-transition-out="slide-to-right" 
-							data-effeckt-transition-page="page-<?php the_ID(); ?>">
+        					data-effeckt-transition-out="slide-to-right" 
+							data-effeckt-transition-page="page-<?php the_ID(); ?>"
+						 	data-effeckt-needs-perspective="true" >
 				        		<?php the_title(); ?>
 			        	</a>
 				<?php endwhile; ?>
 
-			</div>
+			<!-- </div> -->
 
-		</div>
+		<!-- </div> -->
 
 		<?php 
 			// Use wp_localize_script to pass array of values to js
