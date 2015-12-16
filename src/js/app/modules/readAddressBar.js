@@ -12,18 +12,19 @@ module.exports = function readAddressBar(request, page_state) {
         slug = pathArray[theIndex];	
 
         // if it's back to the menu
-        if (slug === jr_portfolio.config.workPage) {
-          transitionBackToMenu();
+        if (slug === jr_portfolio.config.siteUrl) {
+          
+          // transitionBackToMenu();
           return;
         }
 
         // if loaded, find it and show it
-       	if (isLoaded(slug, page_state.loaded_pages, request)) {
+       	// if (isLoaded(slug, page_state.loaded_pages, request)) {
 
-            request.id_str = 'page_' + request.id;
-            transitionToPage(request);
+        //     request.id_str = 'page_' + request.id;
+        //     transitionToPage(request);
 
-       	}
+       	// }
 
     });     	
 };

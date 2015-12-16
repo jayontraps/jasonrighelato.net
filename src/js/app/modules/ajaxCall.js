@@ -17,7 +17,10 @@ module.exports = function ajaxCall(request) {
 		var chunk = buildTemplate(data);
 
 		// insert into the DOM
-		$('#page_' + request.id).append(chunk);
+
+		console.log('#' + request.id_str);
+		
+		$('#' + request.id_str).append(chunk);
 	
 
 

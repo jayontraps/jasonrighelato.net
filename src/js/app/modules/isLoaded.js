@@ -17,6 +17,8 @@ module.exports = function isLoaded(identifier, arr, request) {
 			}
 		}				
 	}
+	
+	console.log("isLoaded : " + res);
 
 	return res;
 

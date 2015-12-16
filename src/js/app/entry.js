@@ -1,16 +1,19 @@
 var ajaxCall = require('./modules/ajaxCall');
 var readAddressBar = require('./modules/readAddressBar');
 var isLoaded = require('./modules/isLoaded');
-var transitionToPage = require('./modules/transitionToPage');
-var transitionBackToMenu = require('./modules/transitionBackToMenu');
+// var transitionToPage = require('./modules/transitionToPage');
+// var transitionBackToMenu = require('./modules/transitionBackToMenu');
 
 
-request = {
-	"href" : "",
-	"id" : 0,
-	"id_str" : "",
-	"json_url" : ""	
-};
+// request = {
+// 	"href" : "",
+// 	"id" : 0,
+// 	"id_str" : "",
+// 	"json_url" : ""	
+// };
+
+request = {};
+
 
 page_state = {
 	"loaded_pages" : [],
@@ -36,14 +39,17 @@ page_state = {
 		// if no touch we can anticipate a click and fire ajaxCall on mouseover
 		if (!Modernizr.touchevents) {
 
-			$('.work_menu').on('mouseover', 'a', function(event) {
+			$('#app').on('mouseover', 'a', function(event) {
 
+				request = {};
 				// get the href
 				request.href = $(this).attr("href");
 				// Get items ID from the DOM
 				request.id = $(this).data('api');		
 				// Get REST URL from WordPress
-				request.json_url = postdata.json_url[request.id];	
+				request.json_url = postdata.json_url[request.id];
+				// create the DOM el id string 
+				request.id_str = 'page_' + request.id;	
 
 				if ( !isLoaded(request.id, page_state.loaded_pages, request) ) {
 					ajaxCall(request);
@@ -56,9 +62,11 @@ page_state = {
 
 
 		/* CLICK */
-		$('.work_menu').on('click', 'a', function(event) {
+		$('#app').on('click', 'a', function(event) {
 
-			event.preventDefault();			
+			event.preventDefault();		
+
+			request = {};				
 			// get the href
 			request.href = $(this).attr("href");
 			// Get items ID from the DOM
@@ -72,14 +80,8 @@ page_state = {
 			// request.json_url = "http://192.168.1.71:3000/jasonrighelato/wp-json/wp/v2/portfolio/" + request.id;
 		
 			// is it already loaded into DOM? Check the page_state.loaded_pages array
-			if ( isLoaded(request.id, page_state.loaded_pages, request) ) {
-						
-				transitionToPage(request);
-
-			} else {
-
-				ajaxCall(request);						
-				transitionToPage(request);				
+			if ( !isLoaded(request.id, page_state.loaded_pages, request) ) {
+				ajaxCall(request);
 			}
 		
 			if (Modernizr.history) {
@@ -101,9 +103,9 @@ page_state = {
 		/* BACK TO MENU */
 		$('#to-menu').on('click', function() {
 			// build the 'work' URL
-			var workMenuUrl = jr_portfolio.config.siteUrl + "/" + jr_portfolio.config.workPage + "/";
+			var workMenuUrl = jr_portfolio.config.siteUrl + "/";
 	        history.pushState( null, null, workMenuUrl );				
-			transitionBackToMenu();
+			// transitionBackToMenu();
 		});
 
 
