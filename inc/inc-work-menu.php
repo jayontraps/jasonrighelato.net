@@ -10,43 +10,41 @@
 
 	<?php if ( $the_query->have_posts() ) : ?>
 
-		<?php $url_array = array(); ?>
+		<?php 
+			$url_array = array(); 
+			$slug_array = array(); 
+			$root = get_site_url(); 
+		?>
 
-		<!-- <div data-effeckt-page="page-list" class="work_menu" > -->
+		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-	    	
-	
-				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<?php
-						// build the REST API URL
-						$root = get_site_url();
-						$apiroot = 'wp-json/wp/v2/posts';
-						$id = get_the_ID();								
-						$apiEndPoint = $root . '/' . $apiroot . '/' . $id;
+			<?php
+				// build the REST API URL for each post and store in $url_array				
+				$apiroot = 'wp-json/wp/v2/posts';
+				$id = get_the_ID();								
+				$apiEndPoint = $root . '/' . $apiroot . '/' . $id;
+				$url_array[$id] = $apiEndPoint;
+				$slug = $post->post_name;
+				$slug_array[$slug] = $id;
+			?>	
 
-						$url_array[$id] = $apiEndPoint;
-					?>			
-						<a 
-							href="<?php the_permalink(); ?>" 
-							class="work_menu_items effeckt-page-transition-button" 
-							data-api="<?php the_ID(); ?>" 					
-							data-effeckt-transition-in="slide-from-left" 
-        					data-effeckt-transition-out="slide-to-right" 
-							data-effeckt-transition-page="page-<?php the_ID(); ?>"
-						 	data-effeckt-needs-perspective="true" >
-				        		<?php the_title(); ?>
-			        	</a>
-				<?php endwhile; ?>
+			<a
+				href="<?php the_permalink(); ?>" 
+				class="work_menu_items" 
+				data-api="<?php the_ID(); ?>">
+	        		<?php the_title(); ?>
+        	</a>
 
-			<!-- </div> -->
+		<?php endwhile; ?>
 
-		<!-- </div> -->
 
 		<?php 
 			// Use wp_localize_script to pass array of values to js
 			wp_localize_script( 'jr_portfolio-bundle', 'postdata',
 				array(
-					'json_url' => $url_array
+					'json_url' => $url_array,
+					'root_url' => $root,
+					'slug' => $slug_array
 				)
 			);
 		?>

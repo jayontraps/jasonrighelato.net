@@ -17,6 +17,11 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
+<!-- 
+<link rel="stylesheet" href="<?php // echo get_stylesheet_directory_uri(); ?>/assets/css/demo/demo.css">
+<link rel="stylesheet" href="<?php // echo get_stylesheet_directory_uri(); ?>/assets/css/effeckt.css">
+
+ -->
 <?php wp_head(); ?>
 </head>
 

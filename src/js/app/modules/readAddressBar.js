@@ -1,6 +1,7 @@
+var domEls = require('./domEls');
 var isLoaded = require('./isLoaded');
-var transitionToPage = require('./transitionToPage');
-var transitionBackToMenu = require('./transitionBackToMenu');
+var injectSpinner = require('./injectSpinner');
+var ajaxCall = require('./ajaxCall');
 
 module.exports = function readAddressBar(request, page_state) {
 
@@ -9,22 +10,52 @@ module.exports = function readAddressBar(request, page_state) {
 		    // get the slug
         pathArray = document.location.pathname.split( '/' );
         theIndex = pathArray.length - 2;
-        slug = pathArray[theIndex];	
+        theSlug = pathArray[theIndex];	
+        theResult = false;
+        /*
+         
+         if theSlug is in postdata.slug update request and fire ajax - you are on the homepage
+         if not trigger back to menu click 
 
-        // if it's back to the menu
-        if (slug === jr_portfolio.config.siteUrl) {
-          
-          // transitionBackToMenu();
-          return;
+        */
+
+        for (key in postdata.slug) {
+
+          if (postdata.slug.hasOwnProperty(key)) {
+            
+            // console.log( key + " : " + postdata.slug[key]);
+
+            if (theSlug === key) {
+
+              theResult = true; 
+              // updates request object
+              request = {};
+              // get the href
+              request.href = "";
+              // Get items ID from the DOM
+              request.id = postdata.slug[key];   
+              // Get REST URL from WordPress
+              request.json_url = postdata.json_url[request.id];       
+              // create the DOM el id string 
+              request.id_str = 'page_' + request.id;
+            }
+          } 
+        } 
+
+        if (theResult) {                    
+            injectSpinner();
+            // if isLoaded grab the chunk from localStorage
+            ajaxCall(request);          
+        } else {
+         
+         // window.location.assign(jr_portfolio.config.siteUrl);
+          //  for browsersync only - CHANGE TO:
+           window.location.assign(postdata.root_url);           
         }
 
-        // if loaded, find it and show it
-       	// if (isLoaded(slug, page_state.loaded_pages, request)) {
-
-        //     request.id_str = 'page_' + request.id;
-        //     transitionToPage(request);
-
-       	// }
 
     });     	
 };
+
+
+

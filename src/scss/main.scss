@@ -1,7 +1,7 @@
 // // helpers
 @import 'helpers/_variables';
 @import 'helpers/_mixins';
-// @import 'helpers/_helpers';
+@import 'helpers/_helpers';
 // @import 'helpers/_getActiveMQ';
 
 
@@ -19,11 +19,12 @@
 // // components
 // @import 'components/_header';
 // @import 'components/_footer';
+@import 'components/_spinner';
 
 @import 'work/work_menu';
 
-// Effectk animations
-// @import "page-transitions/pages";
+// // Effectk animations
+// // @import "page-transitions/pages";
 @import "page-transitions/_variables";
 @import "page-transitions/demo";
 @import "page-transitions/_global";
@@ -32,6 +33,6 @@
 
 
 // my mods
-@import "page-transitions/effeckt-page";
+@import "page-transitions/effeckt-mods";
 
 
