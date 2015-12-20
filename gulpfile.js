@@ -2,7 +2,8 @@ var gulp = require('gulp'),
     gutil = require('gulp-util'),
     notify = require('gulp-notify'),
     gulpif = require('gulp-if'),
-    browserify = require('browserify'),
+    babelify = require('babelify'),
+    browserify = require('browserify'),    
     jshint = require('gulp-jshint'),
     stylish = require('jshint-stylish'),
     uglify = require('gulp-uglify'),
@@ -94,6 +95,9 @@ gulp.task('browserify', function () {
         .pipe(source('bundle.js'))        
         .pipe(gulp.dest(dest + 'js'));
 });
+
+
+
 
 
 gulp.task('browser-sync', function() {

@@ -20,14 +20,16 @@
 // @import 'components/_header';
 // @import 'components/_footer';
 @import 'components/_spinner';
+@import 'components/animate-header';
 
 @import 'work/work_menu';
 
 // // Effectk animations
 // // @import "page-transitions/pages";
 @import "page-transitions/_variables";
-@import "page-transitions/demo";
 @import "page-transitions/_global";
+@import "page-transitions/Effeckt/demo";
+@import "page-transitions/Effeckt/animate-title";
 @import "page-transitions/_page-transitions";
 
 

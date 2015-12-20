@@ -1,4 +1,11 @@
+/* Cache reference to DOM elements */
 var domEls = require('./modules/domEls');
+
+/* my animations */
+// var inView = require('./modules/animations/inView');
+var animateHead = require('./modules/animations/animateHead');
+animateHead();
+
 var injectSpinner = require('./modules/injectSpinner');
 var ajaxCall = require('./modules/ajaxCall');
 var readAddressBar = require('./modules/readAddressBar');
@@ -14,6 +21,10 @@ var pageTransitions = require('./modules/Effeckt/pageTransitions');
 core();
 pageTransitions();
 
+
+
+
+$window = $(window);
 
 
 // GLOBAL FOR DEV
@@ -61,6 +72,59 @@ page_state = {
 (function($) {	
 
 	$(document).ready(function() {
+
+		var $animation_elements = $('#js_animate_head');
+		var $page = $( "[data-effeckt-page]" );
+
+		function check_if_in_view() {
+
+		  var window_height = $page.height();
+		  var window_top_position = $page.scrollTop();
+		  var window_bottom_position = (window_top_position + window_height);
+		 
+		  $.each($animation_elements, function() {
+		    var $element = $(this);
+		    var element_height = $element.outerHeight();
+		    var element_top_position = $element.offset().top;
+		    var element_bottom_position = (element_top_position + element_height);
+		 
+		    //check to see if this current container is within viewport
+		    if ((element_bottom_position >= window_top_position) &&
+		        (element_top_position <= window_bottom_position)) {
+		      $element.addClass('in-view');
+		    } else {
+		      $element.removeClass('in-view');
+		    }
+		  });
+		}
+
+		$page.on('scroll resize', check_if_in_view);
+		$page.trigger('scroll');
+
+
+
+
+		/* scroll events */
+		// $window.on('scroll resize', inView());
+		// $window.trigger('scroll');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 					
 		$('.work_menu_items').on('click', function(event) {
 

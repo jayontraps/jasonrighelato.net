@@ -50,6 +50,7 @@ module.exports = function readAddressBar(request, page_state) {
          
          // window.location.assign(jr_portfolio.config.siteUrl);
           //  for browsersync only - CHANGE TO:
+          
            window.location.assign(postdata.root_url);           
         }
 

@@ -1,0 +1,6 @@
+.letter {
+	opacity: 0;
+	&.in-view {
+		opacity: 1;
+	}
+}

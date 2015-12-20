@@ -7,8 +7,13 @@ get_header("portfolio"); ?>
 
 
 <div data-effeckt-page="page-1">
-    <div class="page-wrap no-transitions" id="page-wrap">
+ <!--    <div class="page-wrap no-transitions" id="page-wrap"> -->
 
+    <div class="page-wrap" id="page-wrap">
+
+    <h1 id="js_animate_another_head">Hello World!</h1>
+
+    <!-- <h2 id="js_animate_head">Trigger these animations on scroll as the element comes into view</h2> -->
 
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -28,6 +33,23 @@ get_header("portfolio"); ?>
 
 
 	<?php include "inc/inc-work-menu.php"; ?>
+
+    <h2 id="js_animate_head">Trigger these animations on scroll as the element comes into view</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 
 	<?php include "inc/inc-effeckt-buttons.php"; ?>
