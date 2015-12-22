@@ -1,61 +1,55 @@
-// This version of Sass doesn't like using string MQ's apparently.
-// $mini: "(max-width: 500px)";
-
 // Reset
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
 
 
-// to avoid extranaous animations while page settles
-.no-transitions,
-.no-transitions * {
-  transition: none !important;
-}
+// // to avoid extranaous animations while page settles
+// .no-transitions,
+// .no-transitions * {
+//   transition: none !important;
+// }
 
-// clearfix
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-}
+// // clearfix
+// .group:after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
 
-:root { // rem
-  font-size: large;
-  line-height: 1.4;
-  @media (max-width: 500px) {
-    font-size: small;
-  }
-}
+// :root { // rem
+//   font-size: large;
+//   line-height: 1.4;
+//   @media (max-width: 500px) {
+//     font-size: small;
+//   }
+// }
 
-// is needed for overlay
-html, body {
-  height: 100%;
-  // testing
-  overflow: hidden;
-}
+// // is needed for overlay
+// html, body {
+//   height: 100%;
+//   // testing
+//   overflow: hidden;
+// }
 
-body {
-  background: #eee;
-  font-family: Sans-serif;
-  overflow: hidden; // for logo effect
+// body {
+//   background: #eee;
+//   font-family: Sans-serif;
+//   overflow: hidden; // for logo effect
 
-  // This is kinda good for performance overall
-  // But... you can't fixed position inside it then
-  // transform: translateZ(0);
+//   // This is kinda good for performance overall
+//   // But... you can't fixed position inside it then
+//   // transform: translateZ(0);
+// }
 
-  @media (max-width: 500px) {
-  }
-}
-
-// Layout
-.page-wrap {
-  // Required for non-janky off-screen squishing
-  float: right;
-  width: 100%;
-}
+// // Layout
+// .page-wrap {
+//   // Required for non-janky off-screen squishing
+//   float: right;
+//   width: 100%;
+// }
 
 // .effeckt {
 //   padding: 2rem;

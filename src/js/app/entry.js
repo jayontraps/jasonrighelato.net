@@ -1,18 +1,12 @@
 /* Cache reference to DOM elements */
 var domEls = require('./modules/domEls');
 
-/* my animations */
-// var inView = require('./modules/animations/inView');
-var animateHead = require('./modules/animations/animateHead');
-animateHead();
+/* Animations */
+var inView = require('./modules/animations/inView');
+var wrapLetters = require('./modules/animations/wrapLetters');
+var animateHeading = require('./modules/animations/animateHeading');
 
-var injectSpinner = require('./modules/injectSpinner');
-var ajaxCall = require('./modules/ajaxCall');
-var readAddressBar = require('./modules/readAddressBar');
-var isLoaded = require('./modules/isLoaded');
-// var transitionToPage = require('./modules/transitionToPage');
-// var transitionBackToMenu = require('./modules/transitionBackToMenu');
-var fireTransition = require('./modules/fireTransition');
+
 
 /* Effeckt */
 var core = require('./modules/Effeckt/core');
@@ -23,8 +17,18 @@ pageTransitions();
 
 
 
+/* loading work pages */
+var injectSpinner = require('./modules/injectSpinner');
+var ajaxCall = require('./modules/ajaxCall');
+var readAddressBar = require('./modules/readAddressBar');
+var isLoaded = require('./modules/isLoaded');
+// var transitionToPage = require('./modules/transitionToPage');
+// var transitionBackToMenu = require('./modules/transitionBackToMenu');
+var fireTransition = require('./modules/fireTransition');
 
-$window = $(window);
+
+
+
 
 
 // GLOBAL FOR DEV
@@ -73,52 +77,20 @@ page_state = {
 
 	$(document).ready(function() {
 
-		var $animation_elements = $('#js_animate_head');
-		var $page = $( "[data-effeckt-page]" );
+		/* SET UP ANIMATIONS */
+		var theTitle = document.getElementById('js_animate_title');
+		wrapLetters(theTitle);
 
-		function check_if_in_view() {
-
-		  var window_height = $page.height();
-		  var window_top_position = $page.scrollTop();
-		  var window_bottom_position = (window_top_position + window_height);
-		 
-		  $.each($animation_elements, function() {
-		    var $element = $(this);
-		    var element_height = $element.outerHeight();
-		    var element_top_position = $element.offset().top;
-		    var element_bottom_position = (element_top_position + element_height);
-		 
-		    //check to see if this current container is within viewport
-		    if ((element_bottom_position >= window_top_position) &&
-		        (element_top_position <= window_bottom_position)) {
-		      $element.addClass('in-view');
-		    } else {
-		      $element.removeClass('in-view');
-		    }
-		  });
-		}
-
-		$page.on('scroll resize', check_if_in_view);
-		$page.trigger('scroll');
+		
+		animateHeading();
 
 
+		var $animation_elements = $('#js_animate_heading');	
+		var homepage = document.getElementById('homepage');
+		inView(homepage, $animation_elements);
 
-
-		/* scroll events */
-		// $window.on('scroll resize', inView());
-		// $window.trigger('scroll');
-
-
-
-
-
-
-
-
-
-
-
-
+		var x = $('#testing');
+		inView(homepage, x);
 
 
 
@@ -126,7 +98,7 @@ page_state = {
 
 
 					
-		$('.work_menu_items').on('click', function(event) {
+		$('.work_menu_link').on('click', function(event) {
 
 			event.preventDefault();
 
@@ -166,16 +138,14 @@ page_state = {
 
 
 
-		/* BROWSERS BACK BUTTON */
-		// add the popstate event handler on the page-portfolio and single-portfolio only
-		// will the event handler remain on other pages??
-
-		if ($('body').hasClass('work-page')) {
-			readAddressBar(request, page_state);			
-		}
 
 
 
+		/* TODO - BROWSERS BACK BUTTON */
+
+		// readAddressBar(request, page_state);
+		// adds the popstate event handler 
+		// needs revision
 
 
 
@@ -190,59 +160,63 @@ page_state = {
 
 
 
-		/* HOVER */
-		// if no touch we can anticipate a click and fire ajaxCall on mouseover
-		if (!Modernizr.touchevents) {
-
-			$('#app').on('mouseover', 'a', function() {
-
-				request = {};
-				// get the href
-				request.href = $(this).attr("href");
-				// Get items ID from the DOM
-				request.id = $(this).data('api');		
-				// Get REST URL from WordPress
-				request.json_url = postdata.json_url[request.id];				
-				// create the DOM el id string 
-				request.id_str = 'page_' + request.id;	
-
-				if ( !isLoaded(request.id, page_state.loaded_pages, request) ) {
-					ajaxCall(request);
-				}
-
-			});
-		}
 
 
 
+		/* TODO - HOVER */
+		// if no touch we can anticipate a click and fire ajaxCall on mouseover of menu links
+		// if (!Modernizr.touchevents) {
 
-		/* CLICK */
-		$('#app').on('click', 'a', function(event) {
+		// 	$('#app').on('mouseover', 'a', function() {
 
-			alert("wtf");
+		// 		request = {};
+		// 		// get the href
+		// 		request.href = $(this).attr("href");
+		// 		// Get items ID from the DOM
+		// 		request.id = $(this).data('api');		
+		// 		// Get REST URL from WordPress
+		// 		request.json_url = postdata.json_url[request.id];				
+		// 		// create the DOM el id string 
+		// 		request.id_str = 'page_' + request.id;	
 
-			event.preventDefault();		
+		// 		if ( !isLoaded(request.id, page_state.loaded_pages, request) ) {
+		// 			ajaxCall(request);
+		// 		}
 
-			request = {};				
-			// get the href
-			request.href = $(this).attr("href");
-			// Get items ID from the DOM
-			request.id = $(this).data('api');		
-			// Get REST URL from WordPress
-			request.json_url = postdata.json_url[request.id];	
-			// create the DOM el id string 
-			request.id_str = 'page_' + request.id;		
+		// 	});
+		// }
+
+
+
+
+		/* FIRST ATTEMPT - CLICK */
+
+		// $('#app').on('click', 'a', function(event) {
+
+		// 	alert("wtf");
+
+		// 	event.preventDefault();		
+
+		// 	request = {};				
+		// 	// get the href
+		// 	request.href = $(this).attr("href");
+		// 	// Get items ID from the DOM
+		// 	request.id = $(this).data('api');		
+		// 	// Get REST URL from WordPress
+		// 	request.json_url = postdata.json_url[request.id];	
+		// 	// create the DOM el id string 
+		// 	request.id_str = 'page_' + request.id;		
 					
-			// is it already loaded into DOM? Check the page_state.loaded_pages array
-			if ( !isLoaded(request.id, page_state.loaded_pages, request) ) {
-				ajaxCall(request);
-			}
+		// 	// is it already loaded into DOM? Check the page_state.loaded_pages array
+		// 	if ( !isLoaded(request.id, page_state.loaded_pages, request) ) {
+		// 		ajaxCall(request);
+		// 	}
 		
-			if (Modernizr.history) {
-			 	history.pushState(null, null, request.href);
-			}
+		// 	if (Modernizr.history) {
+		// 	 	history.pushState(null, null, request.href);
+		// 	}
 
-		});
+		// });
 
 
 

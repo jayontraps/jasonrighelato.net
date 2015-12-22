@@ -25,7 +25,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class("work-page"); ?>>
+<body <?php body_class(); ?>>
 
 
 

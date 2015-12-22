@@ -1,7 +1,33 @@
-.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
-.group { display: inline-block; clear: both; }
+.group:after { 
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+ }
+ 
+.group { 
+    display: inline-block; 
+    clear: both; 
+}
 /* start commented backslash hack \*/ * html .group { height: 1%; } .group { display: block; } /* close commented backslash hack */
 
+
+// // clearfix
+// .group:after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+
+:root { // rem
+  font-size: large;
+  line-height: 1.4;
+  @media (max-width: 500px) {
+    font-size: small;
+  }
+}
 
 
 /* clear floats */

@@ -1,25 +1,53 @@
 var domEls = require('../domEls');
 
-module.exports = function inView() {
+module.exports = function inView(container, $el) {
 
-	var window_height = $window.height();
-	var window_top_position = $window.scrollTop();
-	var window_bottom_position = (window_top_position + window_height);
+	// http://www.html5rocks.com/en/tutorials/speed/animations/#debouncing-scroll-events
 
+	var $animation_elements = $el;
 
-	$.each(domEls.animation_elements, function() {
-		var $element = $(this);
-		var element_height = $element.outerHeight();
-		var element_top_position = $element.offset().top;
-		var element_bottom_position = (element_top_position + element_height);
+	var page = container;
 
-		//check to see if this current container is within viewport
-		if ((element_bottom_position >= window_top_position) &&
-		    (element_top_position <= window_bottom_position)) {
-		  $element.addClass('in-view');
-		} else {
-		  $element.removeClass('in-view');
+	var latestKnownScrollY = 0,
+		ticking = false,
+		pageHeight = $(window).height(),
+		theOffset = 0;
+
+	function onScroll() {
+		latestKnownScrollY = $(homepage).scrollTop();
+		requestTick();
+	}
+	function requestTick() {
+		if(!ticking) {
+			requestAnimationFrame(update);
 		}
-	});
+		ticking = true;
+	}
+	function update() {
+		// reset the tick so we can
+		// capture the next onScroll
+		ticking = false;
+
+		var currentScrollY = latestKnownScrollY;
+
+		// read offset of DOM elements
+		theOffset = $animation_elements.offset();
+
+		// and compare to the currentScrollY value
+		// then apply some CSS classes
+		// to the visible items
+		if (theOffset.top < pageHeight) {
+			$animation_elements.addClass('in-view');
+		} else {
+			$animation_elements.removeClass('in-view');
+		}
+
+		// console.log(theOffset.top);
+		// console.log(pageHeight);
+
+	}
+
+	page.addEventListener('scroll', onScroll, false);
+	
 
 };

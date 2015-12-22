@@ -8,7 +8,8 @@
 
 // // base
 // @import 'base/_normalize';
-// @import 'base/_base';
+@import 'base/_base';
+@import 'base/typography';
 // @import 'base/_webfonts';
 // @import 'base/_forms';
 
@@ -19,22 +20,24 @@
 // // components
 // @import 'components/_header';
 // @import 'components/_footer';
+
+// Animations
 @import 'components/_spinner';
-@import 'components/animate-header';
+@import 'components/_animations';
 
 @import 'work/work_menu';
 
-// // Effectk animations
+
+
+// // Effectk
 // // @import "page-transitions/pages";
 @import "page-transitions/_variables";
 @import "page-transitions/_global";
-@import "page-transitions/Effeckt/demo";
+// @import "page-transitions/Effeckt/demo";
 @import "page-transitions/Effeckt/animate-title";
 @import "page-transitions/_page-transitions";
 
-
-
-// my mods
+// my mods to Effeckt
 @import "page-transitions/effeckt-mods";
 
 

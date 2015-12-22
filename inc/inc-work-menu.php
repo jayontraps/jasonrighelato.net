@@ -16,6 +16,8 @@
 			$root = get_site_url(); 
 		?>
 
+		<div class="work_menu">
+
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 			<?php
@@ -28,14 +30,22 @@
 				$slug_array[$slug] = $id;
 			?>	
 
-			<a
-				href="<?php the_permalink(); ?>" 
-				class="work_menu_items" 
-				data-api="<?php the_ID(); ?>">
-	        		<?php the_title(); ?>
-        	</a>
+			<div class="work_menu_item">
+
+				<a
+					href="<?php the_permalink(); ?>" 
+					class="work_menu_link" 
+					data-api="<?php the_ID(); ?>">
+		        		<?php // the_title(); ?>
+		        		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/300x300.png">
+
+	        	</a>
+
+        	</div>
 
 		<?php endwhile; ?>
+
+		</div><!-- .grid -->
 
 
 		<?php 

@@ -1,50 +1,89 @@
 // base styles
-body, table, input, textarea, select {
-  font-family: $base-font-standard;
-  font-size: $base-font-size;
-  font-weight: 400;
-  @include reset;
-  color: $color-text;
-  background-color: $color-back;
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1, h2, h3 {
-  font-weight: 700;
-  line-height: 1.1;
-  margin: 1em 0 0.2em 0;
+img {
+  max-width: 100%;
 }
 
-h1 {
-  font-size: 10vmin;
+
+// to avoid extranaous animations while page settles
+.no-transitions,
+.no-transitions * {
+  transition: none !important;
 }
 
-h2 {
-  font-size: 1.4rem;
+// is needed for overlay
+html, body {
+  height: 100%;
+  // testing
+  overflow: hidden;
 }
 
-h3 {
-  font-size: 1.1rem;
+body {
+  background: #eee;
+  font-family: Sans-serif;
+  overflow: hidden; // for logo effect
+
+  // This is kinda good for performance overall
+  // But... you can't fixed position inside it then
+  // transform: translateZ(0);
 }
 
-a:link, a:visited {
-  text-decoration: none;
-  color: $color-main;
+// Layout
+.page-wrap {
+  // Required for non-janky off-screen squishing
+  float: right;
+  width: 100%;
 }
 
-a:hover, a:focus, a:active {
-  text-decoration: underline;
-  color: $color-light;
-}
 
-// custom fonts
-.wf-active {
 
-  body, table, input, textarea, select {
-    font-family: $base-font-custom;
+[data-effeckt-page] {
+  position: relative;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  visibility: hidden;
+  z-index:0;
+  padding: 2rem 4rem 0;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  transform-style: preserve-3d;
+  display: none;
+
+  &.effeckt-page-active {
+    display: block;
+    visibility: visible;
+    z-index:10;
   }
 
-  h1, h2, h3, legend, button, a.button {
-    font-family: $head-font-custom;
+  &.effeckt-page-animating {
+    overflow: hidden;
+    z-index: 100;
+    position: absolute;
+    overflow-y: scroll;
+     -ms-overflow-style: -ms-autohiding-scrollbar;
   }
-
 }
+
+
+
+
+.section {
+  margin-bottom: 2rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+
+
