@@ -19,7 +19,7 @@ module.exports = function readAddressBar(request, page_state) {
 
         */
 
-        for (key in postdata.slug) {
+        for (var key in postdata.slug) {
 
           if (postdata.slug.hasOwnProperty(key)) {
             

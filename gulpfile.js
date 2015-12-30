@@ -81,7 +81,9 @@ gulp.task('combine', [ 'browserify', 'js' ], function() {
 
 
 gulp.task('lintjs', function() {
-    return gulp.src(src + 'js/app/**/*.js')
+    return gulp.src([src + 'js/app/**/*.js', 
+                    '!' + src + 'js/app/modules/animations/animate_js/animate.js',
+                    '!' + src + 'js/app/modules/Effeckt/*.js',])
         .pipe(jshint())
         .pipe(jshint.reporter(stylish));
 });

@@ -9,6 +9,46 @@ get_header("portfolio"); ?>
 <div id="homepage" data-effeckt-page="page-1">
  <!--    <div class="page-wrap no-transitions" id="page-wrap"> -->
 
+
+    <section class="section">
+      <ul id="js_test">
+             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+             consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+             cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+         </ul>   
+     </section>  
+
+
+
+
+
     <div class="page-wrap" id="page-wrap">
 
     <h1 class="site-title" id="js_animate_title">Hello World!</h1>
@@ -66,7 +106,7 @@ get_header("portfolio"); ?>
 	   <?php include "inc/inc-effeckt-buttons.php"; ?>
     </section>       
 
-	
+	 
 
 
     </div>
@@ -87,7 +127,9 @@ get_header("portfolio"); ?>
 
     <div class="page-wrap" >
 
-        <div id="js_page_single_item"></div>
+        <div id="js_page_single_item">
+            <?php include "inc/inc-dumby-content.php"; ?>
+        </div>
 
         <button class="effeckt-page-transition-button back-to-menu" id="js_back_to_menu"
         data-effeckt-transition-in="slide-from-left" 

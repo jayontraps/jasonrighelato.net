@@ -1,6 +1,7 @@
 module.exports = function buildTemplate(data) {
 
 	var i = "";
+	var key;
 	var title = data.title.rendered;
 	var content = data.content.rendered;
 

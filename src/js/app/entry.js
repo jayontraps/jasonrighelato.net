@@ -1,19 +1,46 @@
 /* Cache reference to DOM elements */
 var domEls = require('./modules/domEls');
 
+
 /* Animations */
 var inView = require('./modules/animations/inView');
 var wrapLetters = require('./modules/animations/wrapLetters');
 var animateHeading = require('./modules/animations/animateHeading');
+var whichTransitionEvent = require('./modules/animations/animation_utils/whichTransitionEvent');
+var whichAnimationEvent = require('./modules/animations/animation_utils/whichAnimationEvent');
+
+/*
+get callbacks from css animations: https://davidwalsh.name/css-animation-callback
+
+var el = document.getElementById('el'); // get some element
+	
+// store the animation / transition end event - add to global object? 
+var theEvent = whichAnimationEvent();
+
+// add listner and callback
+theEvent && el.addEventListener(theEvent, function() {
+	console.log('Transition complete!  This is the callback, no library needed!');
+});
+
+*/
+
+
+
+
+/* testing animate.js : https://github.com/bendc/animate */
+var testAnimateJs = require('./modules/animations/animate_js/testAnimateJs');
+testAnimateJs();
 
 
 
 /* Effeckt */
 var core = require('./modules/Effeckt/core');
 var pageTransitions = require('./modules/Effeckt/pageTransitions');
+var captions = require('./modules/Effeckt/captions');
 // init Effeckt
 core();
 pageTransitions();
+captions();
 
 
 
@@ -117,7 +144,22 @@ page_state = {
 
 			// if isLoaded grab the chunk from localStorage
 
-			ajaxCall(request);
+
+
+			// ajaxCall(request);
+
+
+			// local testing 
+			// delay for 500ms in case of fast ajax !
+			window.setTimeout(function() {
+
+				$('#js_loading').remove();
+				fireTransition();
+
+			}, 500);	
+
+					
+
 
 			if (Modernizr.history) {
 			 	history.pushState(null, null, request.href);

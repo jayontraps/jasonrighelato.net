@@ -32,12 +32,29 @@
 
 			<div class="work_menu_item">
 
+
 				<a
 					href="<?php the_permalink(); ?>" 
 					class="work_menu_link" 
 					data-api="<?php the_ID(); ?>">
-		        		<?php // the_title(); ?>
-		        		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/300x300.png">
+	 
+	        		
+        			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/600x600.png">
+			
+			      	<div class="caption-wrap">
+				        <div class="slide-in-left">
+				        	<h2>Quarter Caption Zoom</h2>
+			        	</div>
+				        <div class="slide-in-left">
+					        <p>Lorem ipsum dolar lorem ipsum dolar.</p>
+					        <p>Lorem ipsum dolar lorem ipsum dolar.</p>
+				        </div>
+	
+
+	      			</div>
+			    	
+
+				  	
 
 	        	</a>
 

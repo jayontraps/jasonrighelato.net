@@ -30,14 +30,14 @@
 
 
 // // Effectk
-// // @import "page-transitions/pages";
-@import "page-transitions/_variables";
-@import "page-transitions/_global";
-// @import "page-transitions/Effeckt/demo";
-@import "page-transitions/Effeckt/animate-title";
-@import "page-transitions/_page-transitions";
+
+@import "effeckt/_variables";
+@import "effeckt/_global";
+@import "effeckt/animate-title";
+@import "effeckt/_page-transitions";
+// @import "effeckt/_captions";
 
 // my mods to Effeckt
-@import "page-transitions/effeckt-mods";
+@import "effeckt/effeckt-mods";
 
 

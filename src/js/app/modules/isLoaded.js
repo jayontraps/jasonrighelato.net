@@ -4,7 +4,7 @@ module.exports = function isLoaded(identifier, arr, request) {
 
 	for (var i = 0; i < arr.length; i++) {
 		
-		for (key in arr[i]) {
+		for (var key in arr[i]) {
 			
 			if (arr[i].hasOwnProperty(key)) {
 
