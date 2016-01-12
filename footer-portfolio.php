@@ -19,19 +19,53 @@
 	</footer><!-- #colophon -->
 
 
-	<!-- <div id="js_loading"><div class="spinner"></div></div> -->
+
 
 
 
 
 <?php wp_footer(); ?>
-<!-- 
-  <script src="<?php // echo get_stylesheet_directory_uri(); ?>/assets/js/libs/jquery.min.js"></script>
-  <script src="<?php // echo get_stylesheet_directory_uri(); ?>/assets/js/libs/modernizr.js"></script>  
-  <script src="<?php // echo get_stylesheet_directory_uri(); ?>/assets/js/core.js"></script>
-  <script src="<?php // echo get_stylesheet_directory_uri(); ?>/assets/js/modules/page-transitions.js"></script>
 
- -->
+
+
+
+
+
+<script type="text/html" id="itemTemplate">
+
+
+<div class="hero"></div>
+
+<div class="single-intro">   
+
+	<h1 data-content="title"></h1>
+	<div data-content="intro"></div>
+	
+</div>
+
+<div class="single-wrapper">
+	<div class="single-col" data-content="intro"></div>
+	<div class="single-col" data-content="intro"></div>
+	<div class="single-col" data-content="intro"></div>
+	<div class="single-col" data-content="intro"></div>
+</div>
+ 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>

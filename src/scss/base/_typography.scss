@@ -2,6 +2,7 @@ body, table, input, textarea, select {
   font-family: $base-font-standard;
   font-size: $base-font-size;
   font-weight: 400;
+  font-style: normal;
   @include reset;
   color: $color-text;
   background-color: $color-back;
@@ -9,21 +10,24 @@ body, table, input, textarea, select {
 
 
 h1, h2, h3 {
-  font-weight: 700;
+  font-weight: 200;
+  font-style: normal;
   line-height: 1.1;
   margin: 1em 0 0.2em 0;
 }
 
 h1 {
-  font-size: 10vmin;
+  font-size: 5vmin;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  line-height: 2rem;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
+  line-height: 2rem;
 }
 
 a:link, a:visited {
@@ -41,6 +45,7 @@ a:hover, a:focus, a:active {
 
   body, table, input, textarea, select {
     font-family: $base-font-custom;
+    font-size: $base-font-size-custom;
   }
 
   h1, h2, h3, legend, button, a.button {

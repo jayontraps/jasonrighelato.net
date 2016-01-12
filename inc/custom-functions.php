@@ -12,7 +12,7 @@ function enqueue_styles_scripts() {
 	
 	// // wp_enqueue_script( 'jr_portfolio-mustache', get_template_directory_uri() . '/build/js/vendor/mustache.js', array('jquery'));
 
-	// wp_enqueue_script( 'jr_portfolio-all', get_template_directory_uri() . '/build/js/all.js', array('jquery'),'123', true);	
+	wp_enqueue_script( 'jr_portfolio-all', get_template_directory_uri() . '/build/js/all.js', array('jquery'),'123', true);	
 
 	// wp_enqueue_script( 'jr_portfolio-Effeckt', get_template_directory_uri() . '/build/js/vendor/Effeckt.js', array('jquery'),'123', true);	
 

@@ -27,9 +27,11 @@ theEvent && el.addEventListener(theEvent, function() {
 
 
 
+
+
 /* testing animate.js : https://github.com/bendc/animate */
-var testAnimateJs = require('./modules/animations/animate_js/testAnimateJs');
-testAnimateJs();
+// var testAnimateJs = require('./modules/animations/animate_js/testAnimateJs');
+// testAnimateJs();
 
 
 
@@ -105,19 +107,30 @@ page_state = {
 	$(document).ready(function() {
 
 		/* SET UP ANIMATIONS */
-		var theTitle = document.getElementById('js_animate_title');
-		wrapLetters(theTitle);
 
+		var theTitle = document.getElementById('js_animate_title');
+
+		if ($(theTitle).length > 0) {
+			wrapLetters(theTitle);
+		}
+		
 		
 		animateHeading();
 
 
-		var $animation_elements = $('#js_animate_heading');	
 		var homepage = document.getElementById('homepage');
-		inView(homepage, $animation_elements);
+		var $animation_elements = $('#js_animate_heading');	
 
-		var x = $('#testing');
-		inView(homepage, x);
+		if ($(homepage).length > 0) {
+
+			inView(homepage, $animation_elements);
+
+			var x = $('#testing');
+			inView(homepage, x);
+
+		}
+
+		
 
 
 
@@ -146,17 +159,17 @@ page_state = {
 
 
 
-			// ajaxCall(request);
+			ajaxCall(request);
 
 
 			// local testing 
 			// delay for 500ms in case of fast ajax !
-			window.setTimeout(function() {
+			// window.setTimeout(function() {
 
-				$('#js_loading').remove();
-				fireTransition();
+			// 	$('#js_loading').remove();
+			// 	fireTransition();
 
-			}, 500);	
+			// }, 500);	
 
 					
 
@@ -170,9 +183,18 @@ page_state = {
 
 		/* BACK TO MENU */
 		domEls.back_to_menu_btn.on('click', function() {
-	        				
+
+			// scroll the single item page back to top
+			window.setTimeout(function() {
+
+				$('#target').scrollTop( 0 );
+
+			}, 600);
+
+
+				        				
 	        // for browsersync only - CHANGE TO:
-	        history.pushState( null, null, postdata.root_url );
+	        // history.pushState( null, null, postdata.root_url );
 	        
 			// history.pushState( null, null, jr_portfolio.config.siteUrl );
 		});

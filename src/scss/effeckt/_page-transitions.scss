@@ -15,7 +15,7 @@
 
 // Slide From/To Left
 [data-effeckt-page].slide-from-left {
-  animation: slideFromLeft $effeckt-page-transition-duration forwards ease-in-out;
+  animation: slideFromLeft $effeckt-page-transition-duration/2 forwards ease-in-out;
 }
 [data-effeckt-page].slide-to-left {
   animation: slideToLeft $effeckt-page-transition-duration forwards ease-in-out;
@@ -26,7 +26,7 @@
   animation: slideFromRight $effeckt-page-transition-duration forwards ease-in-out;
 }
 [data-effeckt-page].slide-to-right {
-  animation: slideToRight $effeckt-page-transition-duration forwards ease-in-out;
+  animation: slideToRight $effeckt-page-transition-duration/2 forwards ease-in-out;
 }
 
 // Slide From/To Top
@@ -229,15 +229,15 @@
 
 @keyframes scaleDownSlideFromRight-me {
   0%, 25% { 
-    opacity: .5;
+    // opacity: .5;
     transform: translateZ(-500px) translateX(200%);
    }
   75% { 
-    opacity: .5;
+    // opacity: .5;
     transform: translateZ(-500px);
    }
   100% { 
-    opacity: 1;
+    // opacity: 1;
     transform: translateZ(0) translateX(0);
    }
 }

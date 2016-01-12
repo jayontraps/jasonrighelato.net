@@ -1,0 +1,12 @@
+.back-to-menu {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+	position: fixed;
+	z-index: 13;
+	top: 20px;
+	right: 20px;
+	&:hover {
+		cursor: pointer;
+	}
+}

@@ -81,6 +81,22 @@
   animation: logo-from-horz 0.2s 1.1s ease forwards;
   transform: translateX(1000px);
 }
+.site-title span:nth-of-type(12) {
+  animation: logo-from-horz 0.2s 1.1s ease forwards;
+  transform: translateX(1000px);
+}
+.site-title span:nth-of-type(13) {
+  animation: logo-from-horz 0.2s 1.1s ease forwards;
+  transform: translateX(1000px);
+}
+.site-title span:nth-of-type(14) {
+  animation: logo-from-horz 0.2s 1.1s ease forwards;
+  transform: translateX(1000px);
+}
+.site-title span:nth-of-type(15) {
+  animation: logo-from-horz 0.2s 1.1s ease forwards;
+  transform: translateX(1000px);
+}
 
 @keyframes logo-from-horz {
   100% { transform: translateX(0); opacity: 1; }

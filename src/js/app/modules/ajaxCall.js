@@ -1,5 +1,6 @@
 var domEls = require('./domEls');
 var buildTemplate = require('./buildTemplate');
+var renderTemplates = require('./renderTemplates');
 var pageStateUpDate = require('./pageStateUpDate');
 var fireTransition = require('./fireTransition');
 
@@ -16,18 +17,22 @@ module.exports = function ajaxCall(request) {
 		domEls.page_container.empty();
 
 		// update page_state object
-		pageStateUpDate(data, page_state);					
+		pageStateUpDate(data, page_state);	
+
+		renderTemplates(data);
+
+
 		
 		// template the data
-		var chunk = buildTemplate(data);
+		// var chunk = buildTemplate(data);
 
-		// insert into the DOM		
-		domEls.page_container.append(chunk);
+		// // insert into the DOM		
+		// domEls.page_container.append(chunk);
 
 		// delay for 500ms in case of fast ajax !
 		window.setTimeout(function() {
 
-			$('#js_loading').remove();
+			// $('#js_loading').remove();
     		fireTransition();
 
 		}, 500);

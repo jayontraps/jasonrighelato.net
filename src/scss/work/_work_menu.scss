@@ -2,13 +2,34 @@
 	lost-utility: clearfix;
 }
 
-.work_menu_item {
-	lost-column: 1/3;
+// .work_menu_item {
+// 	lost-column: 1/3;
+// }
+
+
+@media ( min-width: $breakpoint-medium ) {
+
+	.work_menu_item {
+		lost-column: 1/2;
+	}
+
+}
+
+@media ( min-width: $breakpoint-large ) {
+
+	.work_menu_item {
+		lost-column: 1/3;
+	}
+
 }
 
 
+
+
+
+
 .work_menu_link {
-	margin: 0;
+	margin-bottom: 2rem;
 	padding: 0;
 	text-decoration: none;
 	display: block;
