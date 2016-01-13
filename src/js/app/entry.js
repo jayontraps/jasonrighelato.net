@@ -117,18 +117,20 @@ page_state = {
 		
 		animateHeading();
 
+		
 
-		var homepage = document.getElementById('homepage');
-		var $animation_elements = $('#js_animate_heading');	
+		// test inView..
+		// var homepage = document.getElementById('homepage');
+		// var $animation_elements = $('#js_animate_heading');	
 
-		if ($(homepage).length > 0) {
+		// if ($(homepage).length > 0) {
 
-			inView(homepage, $animation_elements);
+		// 	inView(homepage, $animation_elements);
 
-			var x = $('#testing');
-			inView(homepage, x);
+		// 	var x = $('#testing');
+		// 	inView(homepage, x);
 
-		}
+		// }
 
 		
 

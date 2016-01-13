@@ -16,7 +16,7 @@
 			$root = get_site_url(); 
 		?>
 
-		<div class="work_menu">
+		<div class="work_menu wrapper">
 
 		<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 

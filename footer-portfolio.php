@@ -13,10 +13,7 @@
 
 
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	
 
 
 
@@ -36,14 +33,14 @@
 
 <div class="hero"></div>
 
-<div class="single-intro">   
+<div class="single-intro wrapper">   
 
 	<h1 data-content="title"></h1>
 	<div data-content="intro"></div>
 	
 </div>
 
-<div class="single-wrapper">
+<div class="single-wrapper wrapper">
 	<div class="single-col" data-content="intro"></div>
 	<div class="single-col" data-content="intro"></div>
 	<div class="single-col" data-content="intro"></div>

@@ -17,33 +17,65 @@ img {
   transition: none !important;
 }
 
+
+
 // is needed for overlay
 html, body {
-  height: 100%;
-  // testing
-  // overflow: hidden;
+   &.portfolio {
+
+      height: 100%;
+      // testing
+      overflow: hidden;
+    }
 }
 
-body {
 
-  // overflow: hidden; // for logo effect
+
+body {
+  &.portfolio {
+    overflow: hidden; // for logo effect
   
   // This is kinda good for performance overall
   // But... you can't fixed position inside it then
   // transform: translateZ(0);
+
+  }
 }
+
+
 
 // Layout
 .page-wrap {
   // Required for non-janky off-screen squishing
   // float: right;
 
-  
+  width: 100%;
+}
+
+.wrapper {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;  
-
+  margin: 0 auto; 
+  padding: 0 1rem;   
 }
+
+@media (min-width: $breakpoint-medium) {
+  .wrapper {
+   padding: 0 2rem;
+  }
+}
+
+@media (min-width: $breakpoint-large) {
+  .wrapper {
+    margin: 0 auto;
+    padding: 0;  
+  }
+}
+
+
+// $breakpoint-small: 25rem; 
+// $breakpoint-medium: 50rem;
+// $breakpoint-large: 75rem;
 
 
 
@@ -57,7 +89,7 @@ body {
   overflow-x: hidden;
   visibility: hidden;
   z-index:0;
-  padding: 1rem 2rem 0;
+  padding: 0;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
   transform-style: preserve-3d;
@@ -101,13 +133,13 @@ body {
 
 @media only screen and (min-width: $breakpoint-medium) {
   [data-effeckt-page] {
-    padding: 2rem 4rem 0;
+    padding: 0;
   }
 }
 
 
 .section {
-  margin-bottom: 2rem;
+  margin-bottom: $default-spacing;
 }
 
 p {

@@ -13,10 +13,14 @@ module.exports = function animateHead() {
 
 		for (var i = 0; i < letters.length; i++) {		
 			letters[i].style.transition = 'opacity ' + n + 'ms ease';
-			n+= 100;
+			n+= 200;
 		}
 
 	}
+
+	window.setTimeout(function() {
+		$(heading).addClass('on-load');
+	}, 200);
 	
 
 };
