@@ -120,7 +120,7 @@ page_state = {
 		
 
 		// test inView..
-		// var homepage = document.getElementById('homepage');
+		var homepage = document.getElementById('homepage');
 		// var $animation_elements = $('#js_animate_heading');	
 
 		// if ($(homepage).length > 0) {
@@ -133,11 +133,18 @@ page_state = {
 		// }
 
 		
+		// ScrollReveal plugin
+		// window.sr = ScrollReveal();
+		// sr.reveal('.intro-item-inner');
+		
+		
+		var introEls = $('.intro-item-inner');
 
+		if ($(homepage).length > 0) {
 
+			inView(homepage, introEls);
 
-
-
+		}
 
 					
 		$('.work_menu_link').on('click', function(event) {

@@ -1,0 +1,158 @@
+.intro {
+	position: relative;
+}
+
+.intro-item, .intro-item-inner {
+	p, h2 {
+		margin: 0;
+		padding: 0;
+	}
+
+	h2 {
+		margin-bottom: 1em;
+	}	
+}
+
+.intro-item {
+	padding: 0;
+	width: 100%;	
+}
+
+@media (min-width: $breakpoint-medium) {
+
+	.intro-item {
+		float: left;
+		clear: none;
+		margin-right: 0;
+		padding: 0;
+		height: 690px;
+		overflow: hidden;
+
+		div:first-child {
+			padding: $default-spacing;
+			height: 345px;
+		}	
+
+		&:last-child {
+			margin-right: 0;
+		}
+		
+		&:nth-child(1) {
+			width: 66%;
+		}
+
+		&:nth-child(2) {
+			width: 34%;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+.intro-item-inner {
+	padding: $default-spacing;		
+}
+
+
+@media (min-width: $breakpoint-medium) {
+
+	.intro-item-inner-wrapper {
+		position: absolute;
+		width: 66%;
+		bottom: 0;
+		left: 2rem;
+		height: 345px;	
+	}
+
+	.intro-item-inner {
+		padding: 0;
+		float: left;
+		height: 100%;
+
+		&:nth-child(1) {
+			width: 66%;
+		}
+
+		&:nth-child(2) {
+			width: 34%;
+		}		
+	}
+}
+
+
+/* inVeiw animations */
+@media (min-width: $breakpoint-medium) {
+	.js {
+		.intro-item-inner {
+			transition: all 1s ease;
+			opacity: 0;
+	
+			&.in-view {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+
+
+@media only screen and (min-width :$breakpoint-medium) and (max-width : 1100px) {
+
+	.intro-item {
+
+		height: 800px;
+
+		div:first-child {
+			height: 400px;
+		}		
+	}
+
+
+
+	.intro-item-inner-wrapper {
+		height: 400px;	
+	}	
+}
+
+
+
+@media (min-width: $breakpoint-large) {
+
+	.intro-item-inner-wrapper {
+		left: 0
+	}
+}
+
+
+
+
+.default-spacing {
+	padding: $default-spacing;
+}
+
+
+
+// colors
+.web {
+	background-color: $col-1;
+}
+.wp-dev {
+	background-color: $col-3;
+}
+
+.design-temp {
+	background-color: $col-1-complementary;
+}
+.space {
+	background-color: $col-2;
+}
+
+
+
+
+

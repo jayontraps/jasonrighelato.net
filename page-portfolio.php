@@ -31,6 +31,35 @@ get_header("portfolio"); ?>
     	   <?php include "inc/inc-work-menu.php"; ?>
         </section>
 
+        <section class="section wrapper intro group">
+
+            <div class="intro-item">
+
+                <div class="web">
+                    <h2>Web design and development</h2>
+                    <p>Providing bespoke, modern, mobile friendly designs is a multi-step, collaborative process between designer and client. At each key stage we'll test and review design decisions and assess business goals. </p>
+                </div>
+
+                <div class="intro-item-inner-wrapper">
+                    <div class="intro-item-inner wp-dev">
+                        <h2>Wordpress development</h2>
+                        <p>The Wordpress CMS is popular, flexible and undergoing rapid development. I have built themes from scratch and customized existing themes using the good old fashioned php templates, TWIG and more recently the WP REST API to create beautiful UIs. </p>
+                    </div>
+                    <div class="intro-item-inner space">
+                        <h2>Some heading</h2>
+                    </div>                
+                </div>                
+            </div>
+
+            <div class="intro-item design-temp">
+                <div class="default-spacing">
+                    <h2>Design to template development</h2>
+                    <p>I have worked with a london-based agency for over 4 years converting their PSDs to working templates for a number of CMS platforms. Working closely with the designer to translate visual breifs into responsive templates.</p>
+                </div>
+                </div>
+
+        </section>
+
         
         <section class="section">
             
