@@ -94,7 +94,7 @@ body {
   transform: translate3d(0, 0, 0);
   transform-style: preserve-3d;
   display: none;
-  background-color: #F5F5F5;
+  background-color: $bgc;
   // background-color: rgba(232,232,232,1);
   
   &.effeckt-page-active {

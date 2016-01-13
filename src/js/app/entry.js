@@ -134,17 +134,19 @@ page_state = {
 
 		
 		// ScrollReveal plugin
-		// window.sr = ScrollReveal();
-		// sr.reveal('.intro-item-inner');
+		window.sr = ScrollReveal()
+		  .reveal( '.content-cell', { container: homepage } )
+		  .reveal( '.work_menu_link', { container: homepage } );
+
 		
 		
-		var introEls = $('.intro-item-inner');
+		// var introEls = $('.content-cell');
 
-		if ($(homepage).length > 0) {
+		// if ($(homepage).length > 0) {
 
-			inView(homepage, introEls);
+		// 	inView(homepage, introEls);
 
-		}
+		// }
 
 					
 		$('.work_menu_link').on('click', function(event) {

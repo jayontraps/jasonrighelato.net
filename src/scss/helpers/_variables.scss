@@ -18,13 +18,13 @@ $color-light: lighten($color-main, 20%);
 $color-dark: darken($color-main, 20%);
 $black: #222;
 $white: #fbfbfb; 
+$bgc: #E8E8E8; // #F5F5F5;
 
 // intro section
-$col-1: #588B8B;
-$col-1-complementary: #F28F3B;
-$col-2: #C8553D;
-$col-3: #FFD5C2;
-
+$col-1: #006876;
+$col-1-complementary: #C35500;
+$col-2: #00A1B6;
+$col-3: #FFB0C3; // #F49CBB
 // spacing
 $default-spacing: 4rem;
 

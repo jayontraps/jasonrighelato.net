@@ -1,5 +1,6 @@
 .intro {
 	position: relative;
+
 }
 
 .intro-item, .intro-item-inner {
@@ -10,6 +11,7 @@
 
 	h2 {
 		margin-bottom: 1em;
+		color: #fafafa;
 	}	
 }
 
@@ -86,18 +88,18 @@
 
 
 /* inVeiw animations */
-@media (min-width: $breakpoint-medium) {
-	.js {
-		.intro-item-inner {
-			transition: all 1s ease;
-			opacity: 0;
+// @media (min-width: $breakpoint-medium) {
+// 	.js {
+// 		.intro-item-inner {
+// 			transition: all 1s ease;
+// 			opacity: 0;
 	
-			&.in-view {
-				opacity: 1;
-			}
-		}
-	}
-}
+// 			&.in-view {
+// 				opacity: 1;
+// 			}
+// 		}
+// 	}
+// }
 
 
 
@@ -124,7 +126,7 @@
 @media (min-width: $breakpoint-large) {
 
 	.intro-item-inner-wrapper {
-		left: 0
+		left: 1px;
 	}
 }
 
@@ -140,9 +142,14 @@
 // colors
 .web {
 	background-color: $col-1;
+	padding: $default-spacing;
 }
 .wp-dev {
 	background-color: $col-3;
+	h2 {
+		color: $color-text;
+	}
+	
 }
 
 .design-temp {
@@ -152,7 +159,17 @@
 	background-color: $col-2;
 }
 
+// .content-cell {
 
+// 	transition: all 1s ease-in-out;
+// 	opacity: 0;
+// 	transform: scale(.9);	
+
+// 	&.in-view {
+// 		opacity: 1;
+// 		transform: scale(1);
+// 	}
+// }
 
 
 

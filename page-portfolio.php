@@ -35,23 +35,23 @@ get_header("portfolio"); ?>
 
             <div class="intro-item">
 
-                <div class="web">
+                <div class="web content-cell">
                     <h2>Web design and development</h2>
                     <p>Providing bespoke, modern, mobile friendly designs is a multi-step, collaborative process between designer and client. At each key stage we'll test and review design decisions and assess business goals. </p>
                 </div>
 
                 <div class="intro-item-inner-wrapper">
-                    <div class="intro-item-inner wp-dev">
+                    <div class="intro-item-inner wp-dev content-cell">
                         <h2>Wordpress development</h2>
                         <p>The Wordpress CMS is popular, flexible and undergoing rapid development. I have built themes from scratch and customized existing themes using the good old fashioned php templates, TWIG and more recently the WP REST API to create beautiful UIs. </p>
                     </div>
-                    <div class="intro-item-inner space">
-                        <h2>Some heading</h2>
+                    <div class="intro-item-inner space content-cell">
+               <!--          <h2>Some heading</h2> -->
                     </div>                
                 </div>                
             </div>
 
-            <div class="intro-item design-temp">
+            <div class="intro-item design-temp content-cell">
                 <div class="default-spacing">
                     <h2>Design to template development</h2>
                     <p>I have worked with a london-based agency for over 4 years converting their PSDs to working templates for a number of CMS platforms. Working closely with the designer to translate visual breifs into responsive templates.</p>
@@ -76,11 +76,7 @@ get_header("portfolio"); ?>
             </div>
 
         </section>
-        
-        <section class="section">
-
-            <div id="testing"></div> 
-        </section>
+               
                    
         <section class="section">
 
