@@ -1,30 +1,80 @@
 .single-item {
-	// background-color: orange;
 	overflow: auto;
+	background-color: $bgc;
 }
 
 .single-wrapper {
 	lost-utility: clearfix;
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto; 
+	padding: 0 1rem;
 }
 
-.header-block {
-	height: 600px;
+@media (min-width: $breakpoint-medium) {
+  .single-wrapper {
+   padding: 0 2rem;
+  }
 }
+
+@media (min-width: $breakpoint-large) {
+  .single-wrapper {
+    margin: 0 auto;
+    padding: 0;  
+  }
+}
+
+
+
+/* Hero */
+
+.header-block {
+	height: 650px;
+}
+
 
 .single-header {
 	width: 100%;
-	height: 600px;
-	// background-size: cover;
+	height: 650px;
 	background-repeat: no-repeat;
-	background-position: center center;
-	position: fixed;
-	z-index: -1;
-	top: 0;
-	left: 0;
+	background-position: center center;		
+}
+
+/* single.php */
+.single-post {
+	.single-header {
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		left: 0;		
+	}
+}
+
+
+.center-wrap {
+	lost-align: center;
+	width: 100%;
+	height: 100%;
+	img {
+		display: block;
+	}
 }
 
 .single-intro {
 	text-align: center;
+	width: 100%;	
+}
+
+
+
+
+
+/* content */
+.single-row {
+	lost-utility: clearfix;
+	// padding-bottom: $default-spacing;
+	// margin-bottom: $default-spacing;
+	position: relative;
 }
 
 .single-col {
@@ -32,32 +82,35 @@
 }
 
 @media (min-width: $breakpoint-medium) {
+	.single-intro {
+		width: 50%;
+	}
+
 	.single-col {
 		lost-column: 1/2;
 	}
 }
 
+.single-hr {
+	clear: both;
+    margin: $default-spacing auto;
+    width: 50%;
+    height: 2px;
+    border: 0;
+    background-color: rgba(101,101,95,.25);
 
-
-
-/* portfolio item ajaxed in */
-
-.hero {
-    // position: absolute;
-	// background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	// background-attachment: fixed;    
-    height: 600px;
-    // width: 100%;
-    // max-width: 640px;
-    // margin: 0 auto;
- //    top: 0;
-	// left: 0;
 }
 
-
-
-
+.item-link {
+	a {
+		display: block;
+		padding: 10px 20px;
+		margin: 0 auto $default-spacing auto;
+		border: 1px solid $color-text;
+		text-transform: uppercase;
+		color: $color-text;
+		width: 160px;
+	}
+}
 
 

@@ -11,73 +11,105 @@ get_header(); ?>
 	
 <?php while ( have_posts() ) : the_post(); ?>
 
-<?php $image = get_field('header_image'); ?>
+<?php 
+	$header_image = get_field('header_image'); 
+	$image_1 = get_field('image_1');
+	$image_2 = get_field('image_2');
+?>
 
 
 <div class="header-block"></div>
 
-<div class="single-header" style="background-image: url('<?php echo $image['url']; ?>');"></div>		
+<div class="single-header">
 
-<div data-effeckt-page="page-default" class="single-item effeckt-page-active" >
+	<div class="center-wrap">
+		<img src="<?php echo $header_image['url']; ?>" />
+	</div>
 	
-	<div class="page-wrap" id="page_default">
+</div>	
+
+
+
+
+
+
+
+
+
+<div class="single-item" >
+	
+	<div id="page_default">
+
 		
-		<div class="single-intro">
+		<div class="single-intro single-wrapper"> 
 			<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 			<p><?php the_field('long_description') ?></p>
+			<hr class="single-hr" />
 		</div>
+
+
 
 		<div class="single-wrapper">
-			
-			<div class="single-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-			<div class="single-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			<div class="single-row">
+				<div class="single-col">
+					<img src="<?php echo $image_1['url']; ?>" />
+				</div>
+
+				<div class="single-col">
+					<div class="centered">
+						<?php the_field('details_1'); ?>
+					</div>
+				</div>	
+				
 			</div>
-			<div class="single-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			<hr class="single-hr" />
+
+
+
+			<div class="single-row">
+
+				<div class="single-col">
+					<div class="centered">
+						<?php the_field('details_2'); ?>
+					</div>
+				</div>	
+
+				<div class="single-col">
+					<img src="<?php echo $image_2['url']; ?>" />
+				</div>
+						
 			</div>
-			<div class="single-col">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
-			
-			
-
-			<div class="entry-content">
-				<?php the_content(); ?>						
-			</div><!-- .entry-content -->
-
-
+			<hr class="single-hr" />
 
 		</div>
+
+
+		<div class="single-wrapper">
+
+			<div class="single-row">
+				<div class="item-link">
+					<a href="<?php the_field('site_url'); ?>">Visit the site</a>
+				</div>
+			</div>
+
+		</div>
+
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+	        <div class="site-info wrapper">
+	            <ul>
+	                <li>Items</li>
+	                <li>Items</li>
+	                <li>Items</li>
+	            </ul>
+	        </div>
+	    </footer>
+
+
+		
 
 	</div>
 </div>	
@@ -87,7 +119,9 @@ get_header(); ?>
 <?php endwhile; // End of the loop. ?>
 
 
-<a class="back-to-menu" href="<?php bloginfo('url'); ?>"></a>
+<a class="back-to-menu" href="<?php bloginfo('url'); ?>">
+	<svg class="icon icon-chevron-thin-left"><use xlink:href="#icon-chevron-thin-left"></use></svg>
+</a>
 
 
 <?php get_footer(); ?>

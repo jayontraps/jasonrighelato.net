@@ -31,8 +31,8 @@
 
 <body <?php body_class(); ?>>
 
-<div id="page" class="hfeed site">
-
+<?php include "inc/inc-svgdefs.php"; ?>
+	
 
 
 

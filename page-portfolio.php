@@ -61,10 +61,10 @@ get_header("portfolio"); ?>
         </section>
 
         
-        <section class="section">
+<!--         <section class="section">
             
             <div class="wrapper">
-                <!-- <h2 id="js_animate_heading">Trigger these animations on scroll as the element comes into view</h2> -->
+                <h2 id="js_animate_heading">Trigger these animations on scroll as the element comes into view</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -90,10 +90,10 @@ get_header("portfolio"); ?>
             </div>
         </section>
 
-
+ -->
         <section class="section">
         <div class="wrapper">
-    	   <?php include "inc/inc-effeckt-buttons.php"; ?>
+    	   <?php  include "inc/inc-effeckt-buttons.php"; ?>
            </div>
         </section>       
 	
@@ -132,8 +132,16 @@ get_header("portfolio"); ?>
     <div class="page-wrap" >
                 
         <div id="js_page_single_item"></div>
-
         
+        <footer id="colophon" class="site-footer" role="contentinfo">
+            <div class="site-info wrapper">
+                <ul>
+                    <li>Items</li>
+                    <li>Items</li>
+                    <li>Items</li>
+                </ul>
+            </div>
+        </footer>                 
 
     </div>
 
@@ -141,10 +149,11 @@ get_header("portfolio"); ?>
 	
 
 
-<button class="effeckt-page-transition-button back-to-menu" id="js_back_to_menu"
+<a href="#" class="effeckt-page-transition-button back-to-menu" id="js_back_to_menu"
         data-effeckt-transition-in="slide-from-left" 
         data-effeckt-transition-out="slide-to-right" 
-        data-effeckt-transition-page="page-1">Slide From Left</button>
+        data-effeckt-transition-page="page-1">
+        <svg class="icon icon-chevron-thin-left"><use xlink:href="#icon-chevron-thin-left"></use></svg></a>
 
 
 

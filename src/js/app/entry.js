@@ -195,10 +195,16 @@ page_state = {
 		/* BACK TO MENU */
 		domEls.back_to_menu_btn.on('click', function() {
 
+			// hide the button 
+			$(this).removeClass('on')
+					.addClass('off');
+
 			// scroll the single item page back to top
 			window.setTimeout(function() {
 
 				$('#target').scrollTop( 0 );
+
+				domEls.back_to_menu_btn.removeClass('off');
 
 			}, 600);
 

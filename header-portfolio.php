@@ -39,7 +39,7 @@
 
 <body <?php body_class('portfolio'); ?>>
 
-
+<?php include "inc/inc-svgdefs.php"; ?>
 
 
 

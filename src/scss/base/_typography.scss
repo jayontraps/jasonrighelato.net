@@ -5,7 +5,7 @@ body, table, input, textarea, select {
   font-style: normal;
   @include reset;
   color: $color-text;
-  background-color: $color-back;
+  background-color: $bgc;
 }
 
 

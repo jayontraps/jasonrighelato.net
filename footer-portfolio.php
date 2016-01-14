@@ -31,21 +31,71 @@
 <script type="text/html" id="itemTemplate">
 
 
-<div class="hero"></div>
+	<div class="single-header">
 
-<div class="single-intro wrapper">   
+		<div class="center-wrap">
+			 <img data-src="heroImage" data-alt="title"/>	
+		</div>
 
-	<h1 data-content="title"></h1>
-	<div data-content="intro"></div>
+	</div>
 	
-</div>
 
-<div class="single-wrapper wrapper">
-	<div class="single-col" data-content="intro"></div>
-	<div class="single-col" data-content="intro"></div>
-	<div class="single-col" data-content="intro"></div>
-	<div class="single-col" data-content="intro"></div>
-</div>
+	<div class="single-intro single-wrapper">   
+
+		<h1 data-content="title"></h1>
+		<div data-content="intro"></div>
+		<hr class="single-hr" />	
+
+	</div>
+
+
+
+
+	<div class="single-wrapper">
+
+		<div class="single-row">
+			<div class="single-col">
+				<img data-src="image_1" data-alt="title"/>
+			</div>
+
+			<div class="single-col">
+				<div class="centered" data-content="intro"></div>
+			</div>	
+			
+		</div>
+
+		<hr class="single-hr" />
+
+
+
+		<div class="single-row">
+
+			<div class="single-col">
+				<div class="centered" data-content="intro"></div>
+			</div>	
+
+			<div class="single-col">
+				<img data-src="image_2" data-alt="title"/>
+			</div>
+					
+		</div>
+
+		<hr class="single-hr" />
+
+	</div>
+
+
+	<div class="single-wrapper">
+
+		<div class="single-row">
+			<div class="item-link" data-content="btnText" data-link="btnLink"></div>
+		</div>
+
+	</div>
+
+
+	
+
  
 </script>
 

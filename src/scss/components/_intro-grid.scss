@@ -7,11 +7,11 @@
 	p, h2 {
 		margin: 0;
 		padding: 0;
+		color: #fafafa;
 	}
 
 	h2 {
-		margin-bottom: 1em;
-		color: #fafafa;
+		margin-bottom: 1em;	
 	}	
 }
 
@@ -145,18 +145,25 @@
 	padding: $default-spacing;
 }
 .wp-dev {
-	background-color: $col-3;
-	h2 {
+	// background-color: $col-3;
+	background: url('../../img/svg-logos/Wordpress_Logo.svg') no-repeat $col-3;
+	background-position: 0 0;
+	background-size: 100%;
+	h2, p {
 		color: $color-text;
 	}
 	
 }
 
+
 .design-temp {
-	background-color: $col-1-complementary;
+	// background-color: $col-1-complementary;
+	background: url('../../img/svg-logos/Sass_Logo_Color.svg') bottom right no-repeat $col-1-complementary;
+	background-size: 100%;
 }
 .space {
-	background-color: $col-2;
+	background: url('../../img/svg-logos/JS.svg') bottom right no-repeat $col-2;
+	background-size: 50%;
 }
 
 // .content-cell {
