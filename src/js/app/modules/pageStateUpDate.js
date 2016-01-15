@@ -1,4 +1,6 @@
 module.exports = function pageStateUpDate(data, page_state) {
+	
+	page_state.current_page = data.slug;
 
 	page_state.loaded_pages.push({
 		"page_id" : data.id,

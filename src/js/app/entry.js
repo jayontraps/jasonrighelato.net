@@ -54,6 +54,7 @@ var isLoaded = require('./modules/isLoaded');
 // var transitionToPage = require('./modules/transitionToPage');
 // var transitionBackToMenu = require('./modules/transitionBackToMenu');
 var fireTransition = require('./modules/fireTransition');
+var backToMenu = require('./modules/backToMenu');
 
 
 
@@ -65,6 +66,7 @@ request = {};
 
 // GLOBAL FOR DEV
 page_state = {
+	"current_page" : "",
 	"loaded_pages" : [],
 	"fromPage" : "",
 	"toPage" : ""
@@ -197,28 +199,15 @@ page_state = {
 
 
 
-		/* BACK TO MENU */
+		// /* BACK TO MENU */
 		domEls.back_to_menu_btn.on('click', function() {
 
-			// hide the button 
-			$(this).removeClass('on')
-					.addClass('off');
+			backToMenu();
 
-			// scroll the single item page back to top
-			window.setTimeout(function() {
+			// for browsersync only - CHANGE TO:
+			// history.pushState( null, null, postdata.root_url );	        
+			history.pushState( null, null, jr_portfolio.config.siteUrl );
 
-				$('#js_page_2').scrollTop( 0 );
-
-				domEls.back_to_menu_btn.removeClass('off');
-
-			}, 600);
-
-
-				        				
-	        // for browsersync only - CHANGE TO:
-	        // history.pushState( null, null, postdata.root_url );
-	        
-			// history.pushState( null, null, jr_portfolio.config.siteUrl );
 		});
 
 
@@ -228,10 +217,13 @@ page_state = {
 
 
 		/* TODO - BROWSERS BACK BUTTON */
+		if ($(homepage).length > 0) {
 
-		// readAddressBar(request, page_state);
-		// adds the popstate event handler 
-		// needs revision
+			readAddressBar(request, page_state);
+			// adds the popstate event handler 
+			// needs revision
+
+		}
 
 
 

@@ -42,7 +42,9 @@
 				<a
 					href="<?php the_permalink(); ?>" 
 					class="work_menu_link" 
-					data-api="<?php the_ID(); ?>">
+					data-api="<?php the_ID(); ?>"
+					id="<?php echo $slug; ?>"
+					>
 	 				<?php 
 
 	        		if( !empty($image) ): ?>
