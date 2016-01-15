@@ -78,8 +78,13 @@
 
 .work_menu_link {
 
+	border:none;
+	outline:none;
+
 	img {
 		display: block;
+		border:none;
+		outline:none;		
       	transition: 300ms;
     }
 
