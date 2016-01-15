@@ -49,8 +49,9 @@ captions();
 /* loading work pages */
 var injectSpinner = require('./modules/injectSpinner');
 var ajaxCall = require('./modules/ajaxCall');
-var readAddressBar = require('./modules/readAddressBar');
-var isLoaded = require('./modules/isLoaded');
+// var readAddressBar = require('./modules/readAddressBar'); // attempt at a router
+
+var isLoaded = require('./modules/isLoaded'); 
 // var transitionToPage = require('./modules/transitionToPage');
 // var transitionBackToMenu = require('./modules/transitionBackToMenu');
 var fireTransition = require('./modules/fireTransition');
@@ -156,7 +157,7 @@ page_state = {
 		// }
 
 					
-		$('.work_menu_link').on('click', function(event) {
+		$('.work_menu_link').on('touchstart click', function(event) {
 
 			event.preventDefault();
 
@@ -192,21 +193,20 @@ page_state = {
 					
 
 
-			if (Modernizr.history) {
-			 	history.pushState(null, null, request.href);
-			}
+			// if (Modernizr.history) {
+			//  	history.pushState(null, null, request.href);
+			// }
 		});
 
 
-
 		// /* BACK TO MENU */
-		domEls.back_to_menu_btn.on('click', function() {
+		domEls.back_to_menu_btn.on('touchstart click', function() {
 
 			backToMenu();
 
 			// for browsersync only - CHANGE TO:
 			// history.pushState( null, null, postdata.root_url );	        
-			history.pushState( null, null, jr_portfolio.config.siteUrl );
+			// history.pushState( null, null, jr_portfolio.config.siteUrl );
 
 		});
 
@@ -217,13 +217,13 @@ page_state = {
 
 
 		/* TODO - BROWSERS BACK BUTTON */
-		if ($(homepage).length > 0) {
+		// if ($(homepage).length > 0) {
 
-			readAddressBar(request, page_state);
-			// adds the popstate event handler 
-			// needs revision
+		// 	readAddressBar(request, page_state);
+		// 	// adds the popstate event handler 
+		// 	// needs revision
 
-		}
+		// }
 
 
 

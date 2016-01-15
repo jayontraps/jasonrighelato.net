@@ -24,6 +24,13 @@
 	}
 }
 
+.single {
+	.back-to-menu {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
 .icon-chevron-thin-left {
 	width: 30px;
 	height: 30px;
