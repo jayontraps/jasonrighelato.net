@@ -49,8 +49,6 @@
 	</div>
 
 
-
-
 	<div class="single-wrapper">
 
 		<div class="single-row">

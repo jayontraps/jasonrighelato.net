@@ -45,9 +45,7 @@ get_header("portfolio"); ?>
                         <h2>Wordpress development</h2>
                         <p>The Wordpress CMS is popular, flexible and undergoing rapid development. I have built themes from scratch and customized existing themes using the good old fashioned php templates, TWIG and more recently the WP REST API to create beautiful UIs. </p>
                     </div>
-                    <div class="intro-item-inner space content-cell">
-               <!--          <h2>Some heading</h2> -->
-                    </div>                
+                    <div class="intro-item-inner space content-cell"></div>                
                 </div>                
             </div>
 
@@ -61,36 +59,7 @@ get_header("portfolio"); ?>
         </section>
 
         
-<!--         <section class="section">
-            
-            <div class="wrapper">
-                <h2 id="js_animate_heading">Trigger these animations on scroll as the element comes into view</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            </div>
-
-        </section>
-               
-                   
-        <section class="section">
-
-            <div class="wrapper">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-        </section>
-
- -->
         <section class="section">
         <div class="wrapper">
     	   <?php  include "inc/inc-effeckt-buttons.php"; ?>
@@ -127,7 +96,7 @@ get_header("portfolio"); ?>
 
 
 
-<div data-effeckt-page="page-single-item" class="single-item" id="target">
+<div data-effeckt-page="page-single-item" class="single-item" id="js_page_2">
 
     <div class="page-wrap" >
                 

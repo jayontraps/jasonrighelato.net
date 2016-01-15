@@ -18,7 +18,12 @@ get_header(); ?>
 ?>
 
 
+
+
 <div class="header-block"></div>
+
+
+
 
 <div class="single-header">
 
@@ -32,86 +37,72 @@ get_header(); ?>
 
 
 
-
-
-
-
 <div class="single-item" >
-	
-	<div id="page_default">
-
-		
-		<div class="single-intro single-wrapper"> 
-			<?php the_title( '<h1 class="title">', '</h1>' ); ?>
-			<p><?php the_field('long_description') ?></p>
-			<hr class="single-hr" />
-		</div>
+			
+	<div class="single-intro single-wrapper"> 
+		<?php the_title( '<h1 class="title">', '</h1>' ); ?>
+		<p><?php the_field('long_description') ?></p>
+		<hr class="single-hr" />
+	</div>
 
 
+	<div class="single-wrapper">
 
-		<div class="single-wrapper">
-
-			<div class="single-row">
-				<div class="single-col">
-					<img src="<?php echo $image_1['url']; ?>" />
-				</div>
-
-				<div class="single-col">
-					<div class="centered">
-						<?php the_field('details_1'); ?>
-					</div>
-				</div>	
-				
+		<div class="single-row">
+			<div class="single-col">
+				<img src="<?php echo $image_1['url']; ?>" />
 			</div>
 
-			<hr class="single-hr" />
-
-
-
-			<div class="single-row">
-
-				<div class="single-col">
-					<div class="centered">
-						<?php the_field('details_2'); ?>
-					</div>
-				</div>	
-
-				<div class="single-col">
-					<img src="<?php echo $image_2['url']; ?>" />
+			<div class="single-col">
+				<div class="centered">
+					<?php the_field('details_1'); ?>
 				</div>
-						
-			</div>
-
-			<hr class="single-hr" />
-
+			</div>	
+			
 		</div>
 
+		<hr class="single-hr" />
 
-		<div class="single-wrapper">
 
-			<div class="single-row">
-				<div class="item-link">
-					<a href="<?php the_field('site_url'); ?>">Visit the site</a>
+
+		<div class="single-row">
+
+			<div class="single-col">
+				<div class="centered">
+					<?php the_field('details_2'); ?>
 				</div>
-			</div>
+			</div>	
 
+			<div class="single-col">
+				<img src="<?php echo $image_2['url']; ?>" />
+			</div>
+					
 		</div>
 
-
-		<footer id="colophon" class="site-footer" role="contentinfo">
-	        <div class="site-info wrapper">
-	            <ul>
-	                <li>Items</li>
-	                <li>Items</li>
-	                <li>Items</li>
-	            </ul>
-	        </div>
-	    </footer>
-
-
-		
+		<hr class="single-hr" />
 
 	</div>
+
+	<div class="single-wrapper">
+
+		<div class="single-row">
+			<div class="item-link">
+				<a href="<?php the_field('site_url'); ?>">Visit the site</a>
+			</div>
+		</div>
+
+	</div>
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="site-info wrapper">
+            <ul>
+                <li>Items</li>
+                <li>Items</li>
+                <li>Items</li>
+            </ul>
+        </div>
+    </footer>
+
 </div>	
 	
 

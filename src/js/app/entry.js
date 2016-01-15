@@ -134,9 +134,14 @@ page_state = {
 
 		
 		// ScrollReveal plugin
-		window.sr = ScrollReveal()
-		  .reveal( '.content-cell', { container: homepage } )
-		  .reveal( '.work_menu_link', { container: homepage } );
+
+		if ($(homepage).length > 0) {
+			window.sr = ScrollReveal()
+				  .reveal( '.content-cell', { container: homepage } )
+				  .reveal( '.work_menu_link', { container: homepage } );
+		}
+
+		
 
 		
 		
@@ -202,7 +207,7 @@ page_state = {
 			// scroll the single item page back to top
 			window.setTimeout(function() {
 
-				$('#target').scrollTop( 0 );
+				$('#js_page_2').scrollTop( 0 );
 
 				domEls.back_to_menu_btn.removeClass('off');
 
