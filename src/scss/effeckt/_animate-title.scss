@@ -62,11 +62,10 @@
   transform: translateY(-50px);
   // background: #666;
 }
+
 .site-title span:nth-of-type(8) {
   animation: logo-from-horz 0.2s 1.1s ease forwards;
   transform: translateX(1000px);
-  background: none;
-  // color: black;
 }
 .site-title span:nth-of-type(9) {
   animation: logo-from-horz 0.2s 1.1s ease forwards;
@@ -96,6 +95,7 @@
   animation: logo-from-horz 0.2s 1.1s ease forwards;
   transform: translateX(1000px);
 }
+
 
 @keyframes logo-from-horz {
   100% { transform: translateX(0); opacity: 1; }

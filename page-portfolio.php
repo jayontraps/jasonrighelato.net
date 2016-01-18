@@ -8,6 +8,8 @@ get_header("portfolio"); ?>
 
 <div id="homepage" data-effeckt-page="page-1">
 
+    <!-- <div class="page-border"></div> -->
+
     <div class="page-wrap" id="page-wrap">
 
         
@@ -15,7 +17,7 @@ get_header("portfolio"); ?>
 
             <div class="wrapper">
                 
-                <h1 class="site-title" id="js_animate_title">Jason Righelato</h1>
+                <h1 class="site-title" id="js_animate_title">Jason&nbsp;Righelato</h1>
 
                 <!--     <h1 id="js_animate_heading">Jason Righelato</h1> -->
 
@@ -78,7 +80,7 @@ get_header("portfolio"); ?>
         <?php include "inc/inc-footer-list.php"; ?>
 
         </div>
-        
+
         <button id="js_trigger_transition"
         class="effeckt-page-transition-button trigger-transition" 
         data-effeckt-transition-in="scale-down-slide-from-right-me" 
