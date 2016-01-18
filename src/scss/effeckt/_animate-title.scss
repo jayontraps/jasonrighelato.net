@@ -1,21 +1,27 @@
 .site-title span {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   position: relative;
   display: inline-block;
   opacity: 0;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
   // background: #ccc;
   // color: white;
   text-align: center;
   text-transform: uppercase;
 
-  @media (max-width: 500px) {
-    font-size: 0.8rem;
+  @media (min-width: $breakpoint-small) {
+    font-size: 1.5rem;
     width: 28px;
     height: 28px;
     line-height: 28px;
+  }
+
+  @media (min-width: $breakpoint-medium) {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
   }
 
 }
