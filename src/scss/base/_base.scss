@@ -92,11 +92,12 @@ body {
   z-index:0;
   padding: 0;
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
+  // prevents position:fixed on child elements - moved to effeckt-page-animating class
+  // transform: translate3d(0, 0, 0);
   transform-style: preserve-3d;
   display: none;
   background-color: $bgc;
-  // background-color: rgba(232,232,232,1);
+
   
   &.effeckt-page-active {
     display: block;
@@ -110,6 +111,8 @@ body {
     position: absolute;
     overflow-y: scroll;
      -ms-overflow-style: -ms-autohiding-scrollbar;
+    // added from above
+     // transform: translate3d(0, 0, 0);
   }
 
 }
@@ -139,8 +142,14 @@ body {
 }
 
 
+.section-wrap {
+  position: relative;
+  z-index: 1;  
+  background-color: $bgc;
+}
+
 .section {
-  margin-bottom: $default-spacing;
+  margin-bottom: $section-spacing;
 }
 
 p {

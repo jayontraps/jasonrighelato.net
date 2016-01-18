@@ -1,4 +1,5 @@
 .back-to-menu {
+	display: block;
 	width: 60px;
 	height: 60px;
 	background-color: #fff;
@@ -6,7 +7,7 @@
 	z-index: 13;
 	top: 40px;
 	left: 40px;
-	transition: all 500ms ease-in-out;
+	transition: all 400ms ease-in-out;
 	opacity: 0;
 	transform: translateX(-100px);
 
@@ -17,10 +18,16 @@
 
 	&.off {
 		opacity: 0;
+		display: none;
 	}
 
 	&:hover {
 		cursor: pointer;
+		background-color: $color-text;
+
+		.icon-chevron-thin-left {
+			color: #fff;
+		}
 	}
 }
 

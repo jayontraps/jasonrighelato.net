@@ -1,4 +1,32 @@
 .header {
-	overflow: auto;
-	margin-bottom: $default-spacing;
+	// overflow: auto;
+	margin-bottom: $section-spacing;
+	width: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+.header-block {
+	width: 100%;
+	height: 500px;
+}
+
+.site-title {
+	// display: inline-block;
+	text-align: center;	
+	line-height: 40px;
+  // width: 100%;
+  // max-width: 800px;
+  margin: $section-spacing auto;
+
+  @media (max-width: 500px) {
+    line-height: 0.8;
+  }
+}
+
+.site-intro {
+	width: 100%;
+  	max-width: 800px;
+  	text-align: center;
+  	margin: 0 auto;
 }

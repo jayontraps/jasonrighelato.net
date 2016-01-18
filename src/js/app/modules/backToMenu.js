@@ -7,7 +7,7 @@ module.exports = function backToMenu() {
 
 	// hide the button 
 	$(domEls.back_to_menu_btn)
-		.removeClass('on')
+		
 			.addClass('off');
 
 	// scroll the single item page back to top
@@ -16,7 +16,7 @@ module.exports = function backToMenu() {
 		$('#js_page_2').scrollTop( 0 );
 
 		$(domEls.back_to_menu_btn)
-			.removeClass('off');
+			.removeClass('on off');
 
 	}, 600);
 		        				    	

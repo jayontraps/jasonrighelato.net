@@ -10,22 +10,31 @@ get_header("portfolio"); ?>
 
     <div class="page-wrap" id="page-wrap">
 
-        <!-- <h1 class="site-title" id="js_animate_title">Jason Righelato</h1> -->
+        
         <header class="header">
 
             <div class="wrapper">
+                
+                <h1 class="site-title" id="js_animate_title">Jason Righelato</h1>
 
-                <h1 id="js_animate_heading">Jason Righelato</h1>
+                <!--     <h1 id="js_animate_heading">Jason Righelato</h1> -->
 
-                <h2><?php echo get_bloginfo ( 'description' ); ?></h2>
+                <div class="site-intro">
+                
+                    <h2><?php echo get_bloginfo ( 'description' ); ?></h2>
 
-                <p>I'm a freelance frontend web developer with over 5 years professional experience. I've worked with small businesses, arts groups and conservation trusts to design and build bespoke websites. </p>
+                    <p>I'm a freelance front-end web developer with over 5 years professional experience. I work with agencies, small businesses, arts groups and charities. I design and build fast loading, responsive websites with modular &amp; maintainable code. </p>
 
-                <p>The goal is to build fast loading, responsive websites which work today and in the future — on every device, be it laptop, smartphone, tv or fridge.</p>
 
+                </div>
+            
             </div>
 
         </header>
+
+        <div class="header-block"></div>
+
+        <div class="section-wrap">
 
         <section class="section">
     	   <?php include "inc/inc-work-menu.php"; ?>
@@ -58,25 +67,24 @@ get_header("portfolio"); ?>
 
         </section>
 
-        
-
+<!--         
         <section class="section">
         <div class="wrapper">
-    	   <?php  include "inc/inc-effeckt-buttons.php"; ?>
+    	   <?php //  include "inc/inc-effeckt-buttons.php"; ?>
            </div>
         </section>       
-	
+ -->
 
+        <?php include "inc/inc-footer-list.php"; ?>
 
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="site-info wrapper">
-                <ul>
-                    <li>Items</li>
-                    <li>Items</li>
-                    <li>Items</li>
-                </ul>
-            </div><!-- .site-info -->
-        </footer><!-- #colophon -->    
+        </div>
+        
+        <button id="js_trigger_transition"
+        class="effeckt-page-transition-button trigger-transition" 
+        data-effeckt-transition-in="scale-down-slide-from-right-me" 
+        data-effeckt-transition-out="scale-down-to-behind-me" 
+        data-effeckt-transition-page="page-single-item" 
+        data-effeckt-needs-perspective="true">Jason</button>
     
     </div>
 
@@ -102,15 +110,9 @@ get_header("portfolio"); ?>
                 
         <div id="js_page_single_item"></div>
         
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="site-info wrapper">
-                <ul>
-                    <li>Items</li>
-                    <li>Items</li>
-                    <li>Items</li>
-                </ul>
-            </div>
-        </footer>                 
+
+        <?php include "inc/inc-footer-list.php"; ?>
+                                
 
     </div>
 

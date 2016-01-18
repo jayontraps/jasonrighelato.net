@@ -20,7 +20,7 @@ get_header(); ?>
 
 
 
-<div class="header-block"></div>
+<div class="single-header-block"></div>
 
 
 
@@ -93,15 +93,7 @@ get_header(); ?>
 
 	</div>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="site-info wrapper">
-            <ul>
-                <li>Items</li>
-                <li>Items</li>
-                <li>Items</li>
-            </ul>
-        </div>
-    </footer>
+	<?php include "inc/inc-footer-list.php"; ?>
 
 </div>	
 	

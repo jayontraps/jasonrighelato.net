@@ -202,6 +202,7 @@ page_state = {
 		// /* BACK TO MENU */
 		domEls.back_to_menu_btn.on('touchstart click', function(event) {
 			event.preventDefault();
+			
 			backToMenu();
 
 			// for browsersync only - CHANGE TO:

@@ -2,7 +2,7 @@ var domEls = require('./domEls');
 
 module.exports = function fireTransition() {
 
-	$('.effeckt .the-btn').trigger('click');
+	domEls.trigger_transition.trigger('click');
 
 	window.setTimeout(function() {	
 		

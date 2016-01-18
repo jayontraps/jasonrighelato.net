@@ -1,4 +1,5 @@
 var domEls = {
+	"trigger_transition" : $('#js_trigger_transition'),
 	"animation_elements" : $('#js_animate_head'),
 	"page_container" : $('#js_page_single_item'),
 	"back_to_menu_btn" : $('#js_back_to_menu'),
