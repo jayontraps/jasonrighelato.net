@@ -49,7 +49,7 @@ captions();
 /* loading work pages */
 var injectSpinner = require('./modules/injectSpinner');
 var ajaxCall = require('./modules/ajaxCall');
-// var readAddressBar = require('./modules/readAddressBar'); // attempt at a router
+var readAddressBar = require('./modules/readAddressBar'); // attempt at a router
 
 var isLoaded = require('./modules/isLoaded'); 
 // var transitionToPage = require('./modules/transitionToPage');
@@ -174,28 +174,11 @@ page_state = {
 
 			injectSpinner();
 
-			// if isLoaded grab the chunk from localStorage
-
-
-
 			ajaxCall(request);
-
-
-			// local testing 
-			// delay for 500ms in case of fast ajax !
-			// window.setTimeout(function() {
-
-			// 	$('#js_loading').remove();
-			// 	fireTransition();
-
-			// }, 500);	
-
 					
-
-
-			// if (Modernizr.history) {
-			//  	history.pushState(null, null, request.href);
-			// }
+			if (Modernizr.history) {
+			 	history.pushState(null, null, request.href);
+			}
 		});
 
 
@@ -207,7 +190,7 @@ page_state = {
 
 			// for browsersync only - CHANGE TO:
 			// history.pushState( null, null, postdata.root_url );	        
-			// history.pushState( null, null, jr_portfolio.config.siteUrl );
+			history.pushState( null, null, jr_portfolio.config.siteUrl );
 
 		});
 
@@ -227,6 +210,7 @@ page_state = {
 		// }
 
 
+		readAddressBar(request, page_state);
 
 
 

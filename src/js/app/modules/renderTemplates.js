@@ -1,12 +1,15 @@
+var fireTransition = require('./fireTransition');
+
 module.exports = function renderTemplates(data) {
 
 	var slug = data.slug;
 	var imageUrl = data.acf.header_image.url;
 
 	function onComplete() {
-		// $(".hero").css("background-image","url("+ imageUrl +")");
-		
-		// console.log(imageUrl);
+
+		console.log('template rendered!');
+		// All set.. 
+		fireTransition();
 	}
 
 	$("#js_page_single_item").removeClass().addClass(slug);

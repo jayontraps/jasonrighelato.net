@@ -63,7 +63,7 @@ get_header("portfolio"); ?>
             <div class="intro-item design-temp content-cell">
                 <div class="default-spacing">
                     <h2>Design to template development</h2>
-                    <p>I have worked with a london-based agency for over 4 years converting their PSDs to working templates for a number of CMS platforms. Working closely with the designer to translate visual breifs into responsive templates.</p>
+                    <p>I have worked with a london-based agency for over 4 years converting their PSDs to working templates for a number of CMS platforms. Working closely with the designer to translate visual briefs into responsive templates.</p>
                 </div>
                 </div>
 

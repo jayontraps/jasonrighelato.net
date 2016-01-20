@@ -1,9 +1,11 @@
 var domEls = require('./domEls');
 var backToMenu = require('./backToMenu');
-
-var isLoaded = require('./isLoaded');
+// var isLoaded = require('./isLoaded');
 var injectSpinner = require('./injectSpinner');
 var ajaxCall = require('./ajaxCall');
+
+
+
 
 module.exports = function readAddressBar(request, page_state) {
 
@@ -17,56 +19,57 @@ module.exports = function readAddressBar(request, page_state) {
         theResult = false;
         
         console.log('readAddressBar.js - theSlug = ' + theSlug);
-        /*  
-         
+
+        window.location.assign(document.location.href);
+
+        /*           
          if theSlug is in postdata.slug update request and fire ajax - you are on the homepage
          if not trigger back to menu click 
-
         */
 
         // are you on the same page_state
-        if (theSlug === page_state.current_page) {
-          return false;
-        }
+        // if (theSlug === page_state.current_page) {
+        //   return false;
+        // }
 
         
-        if (theSlug === "" || theSlug === "jasonrighelato") {
+        // if (theSlug === "" || theSlug === "jasonrighelato") {
 
-          if (page_state.current_page !== "homepage") {
+        //   if (page_state.current_page !== "homepage") {
 
-            console.log("you're on the homepage");
-            domEls.back_to_menu_btn.trigger('click');
-            backToMenu();
-            page_state.current_page = "homepage";
-            return false;            
-          }                              
-        }
+        //     console.log("you're on the homepage");
+        //     domEls.back_to_menu_btn.trigger('click');
+        //     backToMenu();
+        //     page_state.current_page = "homepage";
+        //     return false;            
+        //   }                              
+        // }
 
-        for (var key in postdata.slug) {
+        // for (var key in postdata.slug) {
 
-          if (postdata.slug.hasOwnProperty(key)) {
+        //   if (postdata.slug.hasOwnProperty(key)) {
             
-            // console.log( key + " : " + postdata.slug[key]);
+        //     // console.log( key + " : " + postdata.slug[key]);
 
-            if (theSlug === key) {
+        //     if (theSlug === key) {
 
-              console.log(theSlug);
-              $('#' + theSlug).trigger('click');
+        //       console.log(theSlug);
+        //       $('#' + theSlug).trigger('click');
 
-              // theResult = true; 
-              // // updates request object
-              // request = {};
-              // // get the href
-              // request.href = "";
-              // // Get items ID from the DOM
-              // request.id = postdata.slug[key];   
-              // // Get REST URL from WordPress
-              // request.json_url = postdata.json_url[request.id];       
-              // // create the DOM el id string 
-              // request.id_str = 'page_' + request.id;
-            } 
-          } 
-        } 
+        //       // theResult = true; 
+        //       // // updates request object
+        //       // request = {};
+        //       // // get the href
+        //       // request.href = "";
+        //       // // Get items ID from the DOM
+        //       // request.id = postdata.slug[key];   
+        //       // // Get REST URL from WordPress
+        //       // request.json_url = postdata.json_url[request.id];       
+        //       // // create the DOM el id string 
+        //       // request.id_str = 'page_' + request.id;
+        //     } 
+        //   } 
+        // } 
 
         // if (theResult) {                    
         //     injectSpinner();
