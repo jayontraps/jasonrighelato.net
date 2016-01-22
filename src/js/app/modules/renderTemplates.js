@@ -12,7 +12,7 @@ module.exports = function renderTemplates(data) {
 		fireTransition();
 	}
 
-	$("#js_page_single_item").removeClass().addClass(slug);
+	// $("#js_page_single_item").removeClass().addClass(slug);
 
 	$("#js_page_single_item").loadTemplate($("#itemTemplate"), {
 

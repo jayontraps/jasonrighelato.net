@@ -22,7 +22,7 @@ module.exports = function readAddressBar(request, page_state) {
             theSlug = pathArray[theIndex];	
             theResult = false;
             
-            console.log('readAddressBar.js - theSlug = ' + theSlug);
+            // console.log('readAddressBar.js - theSlug = ' + theSlug);
 
             window.location.assign(document.location.href);
 

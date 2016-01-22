@@ -54,7 +54,7 @@ get_header("portfolio"); ?>
                 <div class="intro-item-inner-wrapper">
                     <div class="intro-item-inner wp-dev content-cell">
                         <h2>Wordpress development</h2>
-                        <p>The Wordpress CMS is popular, flexible and undergoing rapid development. I have built themes from scratch and customized existing themes using the good old fashioned php templates, TWIG and more recently the WP REST API to create beautiful UIs. </p>
+                        <p>The Wordpress CMS is popular, flexible and undergoing rapid development. I can build themes from scratch and customized existing themes using php templates and more recently the WP REST API. </p>
                     </div>
                     <div class="intro-item-inner space content-cell"></div>                
                 </div>                
@@ -108,15 +108,8 @@ get_header("portfolio"); ?>
 
 <div data-effeckt-page="page-single-item" class="single-item" id="js_page_2">
 
-    <div class="page-wrap" >
-                
-        <div id="js_page_single_item"></div>
-        
-
-        <?php include "inc/inc-footer-list.php"; ?>
-                                
-
-    </div>
+    <div id="js_page_single_item" class="page-wrap" ></div>
+    <?php include "inc/inc-footer-list.php"; ?>
 
 </div>
 	
