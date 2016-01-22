@@ -57,7 +57,7 @@
 			</div>
 
 			<div class="single-col">
-				<div class="centered" data-content="intro"></div>
+				<div class="centered" data-content="details_1"></div>
 			</div>	
 			
 		</div>
@@ -69,7 +69,7 @@
 		<div class="single-row">
 
 			<div class="single-col">
-				<div class="centered" data-content="intro"></div>
+				<div class="centered" data-content="details_2"></div>
 			</div>	
 
 			<div class="single-col">

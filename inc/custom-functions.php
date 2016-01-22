@@ -1,7 +1,7 @@
 <?php
 
 function enqueue_styles_scripts() { 
-	wp_enqueue_style( 'jr_portfolio-compiled-style', get_template_directory_uri() . '/build/css/main.css', array(), '123' );
+	wp_enqueue_style( 'jr_portfolio-compiled-style', get_template_directory_uri() . '/build/css/main.css', array(), '124' );
 	
 	wp_enqueue_script( 'jr_portfolio-modenizr', get_template_directory_uri() . '/build/js/vendor/modernizr.js', array(), false);		
 
@@ -12,11 +12,11 @@ function enqueue_styles_scripts() {
 	
 	// // wp_enqueue_script( 'jr_portfolio-mustache', get_template_directory_uri() . '/build/js/vendor/mustache.js', array('jquery'));
 
-	wp_enqueue_script( 'jr_portfolio-all', get_template_directory_uri() . '/build/js/all.js', array('jquery'),'123', true);	
+	wp_enqueue_script( 'jr_portfolio-all', get_template_directory_uri() . '/build/js/all.js', array('jquery'),'124', true);	
 
-	// wp_enqueue_script( 'jr_portfolio-Effeckt', get_template_directory_uri() . '/build/js/vendor/Effeckt.js', array('jquery'),'123', true);	
+	// wp_enqueue_script( 'jr_portfolio-Effeckt', get_template_directory_uri() . '/build/js/vendor/Effeckt.js', array('jquery'),'124', true);	
 
-	wp_enqueue_script( 'jr_portfolio-bundle', get_template_directory_uri() . '/build/js/bundle.js', array('jquery'),'123', true);	
+	wp_enqueue_script( 'jr_portfolio-bundle', get_template_directory_uri() . '/build/js/bundle.js', array('jquery'),'124', true);	
 
 
 	// production
