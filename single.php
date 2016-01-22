@@ -12,6 +12,7 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
 <?php 
+	$slug = $post->post_name;
 	$header_image = get_field('header_image'); 
 	$image_1 = get_field('image_1');
 	$image_2 = get_field('image_2');
@@ -37,7 +38,7 @@ get_header(); ?>
 
 
 
-<div class="single-item" >
+<div class="single-item <?php echo $slug; ?>" >
 			
 	<div class="single-intro single-wrapper"> 
 		<?php the_title( '<h1 class="title">', '</h1>' ); ?>
@@ -49,7 +50,7 @@ get_header(); ?>
 	<div class="single-wrapper">
 
 		<div class="single-row">
-			<div class="single-col">
+			<div class="single-col mobile">
 				<img src="<?php echo $image_1['url']; ?>" />
 			</div>
 

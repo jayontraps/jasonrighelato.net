@@ -127,7 +127,7 @@ gulp.task('watch', ['sass', 'lintjs', 'browserify', 'js', 'browser-sync'], funct
 });
 
 
-gulp.task('build', ['sass', 'lintjs', 'combine', 'browser-sync']); // run export NODE_ENV=prod
+gulp.task('build', ['sass', 'minify-css', 'lintjs', 'combine', 'browser-sync']); // run export NODE_ENV=prod
 
 
 gulp.task('default', ['watch']);

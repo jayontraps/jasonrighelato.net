@@ -1,12 +1,12 @@
 .back-to-menu {
 	display: block;
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 	background-color: #fff;
 	position: fixed;
 	z-index: 13;
-	top: 40px;
-	left: 40px;
+	top: 10px;
+	left: 10px;
 	transition: all 400ms ease-in-out;
 	opacity: 0;
 	transform: translateX(-100px);
@@ -31,6 +31,7 @@
 	}
 }
 
+
 .single {
 	.back-to-menu {
 		opacity: 1;
@@ -39,9 +40,40 @@
 }
 
 .icon-chevron-thin-left {
-	width: 30px;
-	height: 30px;
+
+	width: 20px;
+	height: 20px;
 	position: relative;
-	top: 15px;
-	left: 15px;
+	top: 10px;
+	left: 10px;
+
 }	
+
+
+@media (min-width: $breakpoint-medium) {
+	.back-to-menu {
+		width: 60px;
+		height: 60px;
+		top: 40px;
+		left: 40px;
+	}
+
+	.icon-chevron-thin-left {
+		width: 30px;
+		height: 30px;
+		position: relative;
+		top: 15px;
+		left: 15px;		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
