@@ -14,6 +14,10 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Jason Righelato is a freelance web designer and web developer specializing in front-end development and custom Wordpress themes. "/>
+
+<link rel="canonical" href="http://jasonrighelato.net" />
+
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script>
