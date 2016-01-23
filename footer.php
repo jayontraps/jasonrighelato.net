@@ -24,6 +24,7 @@
 <?php wp_footer(); ?>
 
 
+<?php include_once("inc/analyticstracking.php") ?>
 
 </body>
 </html>
