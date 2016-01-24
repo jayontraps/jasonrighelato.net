@@ -1,7 +1,7 @@
 <?php
 
 function enqueue_styles_scripts() { 
-	wp_enqueue_style( 'jr_portfolio-compiled-style', get_template_directory_uri() . '/build/css/main.css', array(), '124' );
+	wp_enqueue_style( 'jr_portfolio-compiled-style', get_template_directory_uri() . '/build/css/main.css', array(), '125' );
 	
 	wp_enqueue_script( 'jr_portfolio-modenizr', get_template_directory_uri() . '/build/js/vendor/modernizr-custom.min.js', array(), false);		
 
