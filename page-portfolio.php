@@ -25,7 +25,7 @@ get_header("portfolio"); ?>
                 
                     <h2><?php echo get_bloginfo ( 'description' ); ?></h2>
 
-                    <p>I'm a freelance front-end web developer with over 5 years professional experience. I work with agencies, small businesses, arts groups and charities. I design and build fast loading, responsive websites with modular &amp; maintainable code. </p>
+                    <p>A freelance front-end web developer with over 5 years professional experience, I work with agencies, small businesses, arts groups and charities. I design and build fast loading, responsive websites with modular &amp; maintainable code. </p>
 
 
                 </div>
