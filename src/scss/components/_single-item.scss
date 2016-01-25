@@ -64,12 +64,6 @@
 	}
 }
 
-// @media (min-width: 900px) {
-// 	.single-header, .single-header-block {
-// 		height: 650px;
-// 	}
-// }
-
 
 /* single.php */
 .single-post {
@@ -83,6 +77,14 @@
 }
 
 
+
+
+
+
+
+
+
+
 .center-wrap {
 	lost-align: center;
 	width: 100%;
@@ -90,6 +92,8 @@
 	img {
 		display: block;
 		max-width: 90%;
+		position: relative;
+		z-index: 2;
 	}
 }
 
@@ -105,11 +109,6 @@
 }
 
 
-
-
-
-
-/* content */
 .single-row {
 	lost-utility: clearfix;
 	// padding-bottom: $default-spacing;

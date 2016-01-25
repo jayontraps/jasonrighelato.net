@@ -17,8 +17,9 @@
 
 	<div class="single-header">
 
-		<div class="center-wrap">
-			 <img data-src="heroImage" data-alt="title"/>	
+		<div class="center-wrap">	
+			<svg class="icon icon-spinner8"><use xlink:href="#icon-spinner8"></use></svg>		
+		 	<img data-src="heroImage" data-alt="title"/>	
 		</div>
 
 	</div>

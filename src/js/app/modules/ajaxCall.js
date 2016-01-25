@@ -2,8 +2,8 @@ var domEls = require('./domEls');
 var renderTemplates = require('./renderTemplates');
 var pageStateUpDate = require('./pageStateUpDate');
 
-
 module.exports = function ajaxCall(request) {
+
 
 	$.ajax({
 	    url: request.json_url,

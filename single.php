@@ -29,6 +29,7 @@ get_header(); ?>
 <div class="single-header">
 
 	<div class="center-wrap">
+		<svg class="icon icon-spinner8"><use xlink:href="#icon-spinner8"></use></svg>
 		<img src="<?php echo $header_image['url']; ?>" />
 	</div>
 	

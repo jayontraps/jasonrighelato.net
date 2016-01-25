@@ -6,8 +6,6 @@ module.exports = function renderTemplates(data) {
 	var imageUrl = data.acf.header_image.url;
 
 	function onComplete() {
-
-		console.log('template rendered!');
 		// All set.. 
 		fireTransition();
 	}
