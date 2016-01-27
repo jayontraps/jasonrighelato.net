@@ -7,26 +7,26 @@
 
 
 // // base
-// @import 'base/_normalize';
-@import 'base/_base';
+@import 'base/_normalize';
 @import 'base/_typography';
 @import 'base/_svg';
-@import 'components/_page-border';
-// @import 'base/_webfonts';
-// @import 'base/_forms';
-
-// // navigation
-// // @import 'nav/_off-canvas';
+@import 'base/_webfonts';
 
 
-// // components
+// page transitions
+@import 'base/_base';
+@import 'base/_page-transitions';
+
+
+
+// // // components
 @import 'components/_header';
 @import 'components/_footer';
 @import 'components/_intro-grid';
 @import 'components/_intro-grid-item';
 @import 'components/_single-item-spinner';
 
-// Animations
+// // Animations
 @import 'components/_back-to-menu';
 @import 'components/_spinner';
 @import 'components/_animations';
@@ -34,16 +34,5 @@
 @import 'work/work_menu';
 
 
-
-// // Effectk
-
-@import "effeckt/_variables";
-@import "effeckt/_global";
-@import "effeckt/animate-title";
-@import "effeckt/_page-transitions";
-@import "effeckt/_trigger-transition-btn";
-
-// my mods to Effeckt
-@import "effeckt/effeckt-mods";
 
 

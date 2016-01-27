@@ -27,7 +27,7 @@ module.exports = function readAddressBar(request, page_state) {
             window.location.assign(document.location.href);
 
             /*           
-             if theSlug is in postdata.slug update request and fire ajax - you are on the homepage
+             if theSlug is in postdata.slug update request and fire ajax - you are on the js_page_1
              if not trigger back to menu click 
             */
 
@@ -39,12 +39,12 @@ module.exports = function readAddressBar(request, page_state) {
             
             // if (theSlug === "" || theSlug === "jasonrighelato") {
 
-            //   if (page_state.current_page !== "homepage") {
+            //   if (page_state.current_page !== "js_page_1") {
 
-            //     console.log("you're on the homepage");
+            //     console.log("you're on the js_page_1");
             //     domEls.back_to_menu_btn.trigger('click');
             //     backToMenu();
-            //     page_state.current_page = "homepage";
+            //     page_state.current_page = "js_page_1";
             //     return false;            
             //   }                              
             // }

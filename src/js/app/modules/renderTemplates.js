@@ -1,4 +1,4 @@
-var fireTransition = require('./fireTransition');
+var domEls = require('./domEls');
 
 module.exports = function renderTemplates(data) {
 
@@ -7,7 +7,7 @@ module.exports = function renderTemplates(data) {
 
 	function onComplete() {
 		// All set.. 
-		fireTransition();
+		domEls.page_1.addClass('page-animating scale-down');
 	}
 
 	$("#js_page_single_item").removeClass().addClass(slug);

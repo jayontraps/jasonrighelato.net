@@ -42,8 +42,8 @@
 
 
 	<button class="effeckt-page-transition-button the-btn" 
-	  data-effeckt-transition-in="scale-down-slide-from-right-me" 
-	  data-effeckt-transition-out="scale-down-to-behind-me" 
+	  data-effeckt-transition-in="slide-in-from-right" 
+	  data-effeckt-transition-out="scale-down" 
 	  data-effeckt-transition-page="page-single-item" 
 	  data-effeckt-needs-perspective="true">Jason</button>
 

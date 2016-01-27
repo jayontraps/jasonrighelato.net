@@ -13,7 +13,7 @@ module.exports = function animateHead() {
 
 		for (var i = 0; i < letters.length; i++) {		
 			letters[i].style.transition = 'opacity ' + n + 'ms ease';
-			n+= 200;
+			n+=200;
 		}
 
 	}

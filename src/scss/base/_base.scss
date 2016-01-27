@@ -55,7 +55,7 @@ body {
 
 .wrapper {
   width: 100%;
-  max-width: $homepage-max-width;
+  max-width: $js_page_1-max-width;
   margin: 0 auto; 
   padding: 0 1rem;   
 }
@@ -74,13 +74,10 @@ body {
 }
 
 
-// $breakpoint-small: 25rem; 
-// $breakpoint-medium: 50rem;
-// $breakpoint-large: 75rem;
 
 
 
-[data-effeckt-page] {
+[data-page] {
   position: relative;
   top:0;
   left:0;
@@ -92,20 +89,20 @@ body {
   z-index:0;
   padding: 0;
   backface-visibility: hidden;
-  // prevents position:fixed on child elements - moved to effeckt-page-animating class
+  // prevents position:fixed on child elements - moved to page-animating class
   // transform: translate3d(0, 0, 0);
   transform-style: preserve-3d;
   display: none;
   background-color: $bgc;
 
   
-  &.effeckt-page-active {
+  &.page-active {
     display: block;
     visibility: visible;
     z-index: 10;
   }
 
-  &.effeckt-page-animating {
+  &.page-animating {
     overflow: hidden;
     z-index: 10;
     position: absolute;
@@ -118,28 +115,43 @@ body {
 }
 
 
-[data-effeckt-page]#js_page_2 {
+// [data-page]#js_page_2 {
 
-  z-index: 12;
+//   z-index: 12;
 
-  &.effeckt-page-active {
-    z-index: 12;
-  }
+//   &.page-active {
+//     z-index: 12;
+//   }
 
-  &.effeckt-page-animating {
-    z-index: 12;
-  }  
-}
+//   &.page-animating {
+//     z-index: 12;
+//   }  
+// }
 
 
 
 
 
 @media only screen and (min-width: $breakpoint-medium) {
-  [data-effeckt-page] {
+  [data-page] {
     padding: 0;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .section-wrap {

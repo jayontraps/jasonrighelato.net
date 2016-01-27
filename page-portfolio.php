@@ -6,18 +6,18 @@
 get_header("portfolio"); ?>
 
 
-<div id="homepage" data-effeckt-page="page-1">
-
+<div id="js_page_1" data-page="page-1" class="page-active page">
     <!-- <div class="page-border"></div> -->
 
     <div class="page-wrap" id="page-wrap">
-
+        
+        <div class="header-block"></div>
         
         <header class="header">
 
             <div class="wrapper">
                 
-                <h1 class="site-title" id="js_animate_title">Jason&nbsp;Righelato</h1>
+                <h1 class="site-title" id="js_animate_heading">Jason&nbsp;Righelato</h1>
 
                 <!--     <h1 id="js_animate_heading">Jason Righelato</h1> -->
 
@@ -34,7 +34,7 @@ get_header("portfolio"); ?>
 
         </header>
 
-        <div class="header-block"></div>
+        
 
         <div class="section-wrap">
 
@@ -69,13 +69,6 @@ get_header("portfolio"); ?>
 
         </section>
 
-<!--         
-        <section class="section">
-        <div class="wrapper">
-    	   <?php //  include "inc/inc-effeckt-buttons.php"; ?>
-           </div>
-        </section>       
- -->
 
         <?php include "inc/inc-footer-list.php"; ?>
 
@@ -83,30 +76,18 @@ get_header("portfolio"); ?>
 
         <button id="js_trigger_transition"
         class="effeckt-page-transition-button trigger-transition" 
-        data-effeckt-transition-in="scale-down-slide-from-right-me" 
-        data-effeckt-transition-out="scale-down-to-behind-me" 
+        data-effeckt-transition-in="slide-in-from-right" 
+        data-effeckt-transition-out="scale-down" 
         data-effeckt-transition-page="page-single-item" 
         data-effeckt-needs-perspective="true">Jason</button>
     
     </div>
 
-</div><!-- #homepage -->
+</div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-<div data-effeckt-page="page-single-item" class="single-item" id="js_page_2">
+<div class="single-item page" data-page="page-2" id="js_page_2">
 
     <div id="js_page_single_item" class="page-wrap" ></div>
     <?php include "inc/inc-footer-list.php"; ?>

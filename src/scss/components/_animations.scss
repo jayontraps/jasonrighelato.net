@@ -1,15 +1,14 @@
 .letter {
 	opacity: 0;
-	&.in-view {
-		opacity: 1;
-	}
 }
 
-.on-load {
+.wf-active {
 	.letter {
 		opacity: 1;
 	}
 }
+
+
 
 #testing {
 	width: 100%;

@@ -3,12 +3,12 @@ var domEls = require('./domEls');
 module.exports = function backToMenu() {
 
 	// update page_state
-	page_state.current_page = "homepage";
+	page_state.current_page = 'js_page_1';
 
 	// hide the button 
 	$(domEls.back_to_menu_btn)
-		
-			.addClass('off');
+				.addClass('off');
+
 
 	// scroll the single item page back to top
 	window.setTimeout(function() {
@@ -18,6 +18,6 @@ module.exports = function backToMenu() {
 		$(domEls.back_to_menu_btn)
 			.removeClass('on off');
 
-	}, 600);
+	}, 300);
 		        				    	
 };

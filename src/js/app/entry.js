@@ -2,7 +2,7 @@
 var domEls = require('./modules/domEls');
 
 
-/* Animations */
+/* Animation utilities and functions */
 var inView = require('./modules/animations/inView');
 var wrapLetters = require('./modules/animations/wrapLetters');
 var animateHeading = require('./modules/animations/animateHeading');
@@ -21,12 +21,7 @@ var theEvent = whichAnimationEvent();
 theEvent && el.addEventListener(theEvent, function() {
 	console.log('Transition complete!  This is the callback, no library needed!');
 });
-
 */
-
-
-
-
 
 
 /* testing animate.js : https://github.com/bendc/animate */
@@ -35,26 +30,12 @@ theEvent && el.addEventListener(theEvent, function() {
 
 
 
-/* Effeckt */
-var core = require('./modules/Effeckt/core');
-var pageTransitions = require('./modules/Effeckt/pageTransitions');
-var captions = require('./modules/Effeckt/captions');
-// init Effeckt
-core();
-pageTransitions();
-captions();
-
-
 
 /* loading work pages */
 var injectSpinner = require('./modules/injectSpinner');
 var ajaxCall = require('./modules/ajaxCall');
-var readAddressBar = require('./modules/readAddressBar'); // attempt at a router
-
-var isLoaded = require('./modules/isLoaded'); 
-// var transitionToPage = require('./modules/transitionToPage');
-// var transitionBackToMenu = require('./modules/transitionBackToMenu');
-var fireTransition = require('./modules/fireTransition');
+var readAddressBar = require('./modules/readAddressBar'); // simple routing
+// var isLoaded = require('./modules/isLoaded'); // use with localstorage 
 var backToMenu = require('./modules/backToMenu');
 
 
@@ -67,6 +48,8 @@ request = {};
 
 // GLOBAL FOR DEV
 page_state = {
+	"animate_to_item" : false,
+	"animate_from_item" : false,
 	"current_page" : "",
 	"loaded_pages" : [],
 	"fromPage" : "",
@@ -119,47 +102,122 @@ page_state = {
 		
 		
 		animateHeading();
-
 		
+		
+		var js_page_1 = document.getElementById('js_page_1');
+		var js_page_2 = document.getElementById('js_page_2');
 
-		// test inView..
-		var homepage = document.getElementById('homepage');
+
+
+		// test inView :
 		// var $animation_elements = $('#js_animate_heading');	
-
-		// if ($(homepage).length > 0) {
-
-		// 	inView(homepage, $animation_elements);
-
-		// 	var x = $('#testing');
-		// 	inView(homepage, x);
-
+		// if ($(js_page_1).length > 0) {
+		// 	inView(js_page_1, $animation_elements);
 		// }
 
 		
-		// ScrollReveal plugin
+		
 
-		if ($(homepage).length > 0) {
+
+		// ScrollReveal plugin
+		if ($(js_page_1).length > 0) {
 			window.sr = ScrollReveal()
-				  .reveal( '.content-cell', { container: homepage } )
-				  .reveal( '.work_menu_link', { container: homepage } );
+				  .reveal( '.content-cell', { container: js_page_1 } )
+				  .reveal( '.work_menu_link', { container: js_page_1 } );
 		}
 
 		
 
-		
-		
-		// var introEls = $('.content-cell');
 
-		// if ($(homepage).length > 0) {
 
-		// 	inView(homepage, introEls);
 
-		// }
+
+
+		/* listen for animationend on [data-page] */
+
+		// page-1 listner and callback
+		if ($(js_page_1).length > 0) {
+			
+			// store the animation / transition end event - add to global object? 
+			var theEvent = whichAnimationEvent();
+
+			// add listner and callback
+			theEvent && js_page_1.addEventListener(theEvent, function(e) {
+
+				if (e.target.id === 'js_page_1' && page_state.animate_to_item) {
+									
+					domEls.page_1.removeClass('page-animating page-active');
+
+					domEls.page_2.addClass('page-animating page-active slide-in-from-right');
+				}
+
+
+				
+				// add listner and callback - listen on animate_from_item state
+				if (e.target.id === 'js_page_1' && page_state.animate_from_item) {													
+					domEls.page_2
+						.removeClass('page-animating page-active slide-to-right');
+
+					domEls.page_1
+						.removeClass('slide-from-left page-animating');	
+				}
+			});
+		}
+
+
+		// page-2 listner and callback
+		if ($(js_page_2).length > 0) {
+			
+			var theAnimationEvent = whichAnimationEvent();
+
+			// add listner and callback - listen on animate_to_item state
+			theAnimationEvent && js_page_2.addEventListener(theAnimationEvent, function(e) {
+
+				if (e.target.id === 'js_page_2' && page_state.animate_to_item) {
+
+					$('#js_loading').remove();
+
+					domEls.page_1
+						.removeClass('scale-down');
+				
+					domEls.page_2
+						.removeClass('page-animating slide-in-from-right');
+
+					domEls.back_to_menu_btn
+						.addClass('on');					
+					
+				}
+
+				
+				// // add listner and callback - listen on animate_from_item state
+				// if (e.target.id === 'js_page_2' && page_state.animate_from_item) {													
+				// 	domEls.page_2.removeClass('page-animating page-active slide-to-right');
+
+				// 	domEls.page_1
+				// 		.removeClass('page-animating');
+					
+				// }
+
+
+			});
+		}
+
+
+
+
+
+
+
+	
 
 					
 		$('.work_menu_link').on('click', function(event) {
 
 			event.preventDefault();
+
+			// set the page_state 
+			page_state.animate_from_item = false;
+			page_state.animate_to_item = true;
 
 			// updates request object
 			request = {};
@@ -182,10 +240,30 @@ page_state = {
 		});
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 		// /* BACK TO MENU */
 		domEls.back_to_menu_btn.on('touchstart click', function(event) {
 			event.preventDefault();
 			
+			page_state.animate_to_item = false;
+			page_state.animate_from_item = true;
+
+			// $('[data-page]').removeClass('page-active');
+
+			$(js_page_1).addClass('slide-from-left page-active page-animating');
+			$(js_page_2).addClass('slide-to-right page-active page-animating');
+
 			backToMenu();
 
 			// for browsersync only - CHANGE TO:
@@ -201,7 +279,7 @@ page_state = {
 
 
 		/* TODO - BROWSERS BACK BUTTON */
-		// if ($(homepage).length > 0) {
+		// if ($(js_page_1).length > 0) {
 
 		// 	readAddressBar(request, page_state);
 		// 	// adds the popstate event handler 
@@ -255,8 +333,6 @@ page_state = {
 		/* FIRST ATTEMPT - CLICK */
 
 		// $('#app').on('click', 'a', function(event) {
-
-		// 	alert("wtf");
 
 		// 	event.preventDefault();		
 

@@ -23,7 +23,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <script>
-  (function(d) {
+ (function(d) {
     var config = {
       kitId: 'tim2fby',
       scriptTimeout: 3000,

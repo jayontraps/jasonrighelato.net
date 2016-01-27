@@ -1,0 +1,129 @@
+$pt-duration: 1000ms;
+$out-duration: 900ms;
+$in-duration: 1100ms;
+
+/* transition to single item */
+
+// OUT:
+.page.scale-down {
+  animation: scaleDown $out-duration forwards ease-out;
+}
+
+
+@keyframes scaleDown {
+
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+
+
+// IN:
+.page.slide-in-from-right {
+  animation: slideInFromRight $in-duration forwards ease-in-out;
+  &.page-animating {
+    @extend .page-on-top;
+  }
+}
+
+
+@keyframes slideInFromRight {
+
+  0% {
+    // opacity: 0;
+    transform: translateX(200%);
+  }
+  
+
+  100% { 
+    // opacity: 1;
+    transform: translateX(0);
+   }
+}
+
+
+
+
+
+
+
+
+
+/* transition back to menu */
+
+// OUT:
+.page.slide-to-right {
+  animation: slideToRight $pt-duration/2 forwards ease-in-out;
+}
+
+@keyframes slideToRight {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+
+// IN:
+.page.slide-from-left {
+  animation: slideFromLeft $pt-duration/2 forwards ease-in-out;
+}
+
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideToLeft {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------------------------------------
+// Utils Classes
+// If you want to use it againts normal definition
+//-----------------------------------------------------
+
+
+// Make this page on top
+.page-on-top {
+  z-index:999;
+}
+
+// Animation Delay Classes
+.animation-delay-100 {
+  animation-delay: .100s;
+}
+.animation-delay-200 {
+  animation-delay: .200s;
+}
+.animation-delay-300 {
+  animation-delay: .300s;
+}
+.animation-delay-500 {
+  animation-delay: .500s;
+}
+.animation-delay-700 {
+  animation-delay: .700s;
+}
+.animation-delay-1000 {
+  animation-delay: 1000s;
+}

@@ -21,7 +21,7 @@ var EffecktPageTransitions = {
 
     var $pages = $('[data-effeckt-page]');
 
-    this.fromPage = $pages.first().addClass('effeckt-page-active');
+    this.fromPage = $pages.first().addClass('page-active');
 
   },
 
@@ -61,12 +61,12 @@ var EffecktPageTransitions = {
     this.transitionOutEffect= transitionOutEffect;
 
     // Get Pages
-    this.fromPage = $('[data-effeckt-page].effeckt-page-active');
+    this.fromPage = $('[data-effeckt-page].page-active');
     this.toPage   = $('[data-effeckt-page="' + transitionPage + '"]');
 
     // Add this class to prevent scroll to be displayed
-    this.toPage.addClass('effeckt-page-animating effeckt-page-active ' + this.transitionInEffect);
-    this.fromPage.addClass('effeckt-page-animating');
+    this.toPage.addClass('page-animating page-active ' + this.transitionInEffect);
+    this.fromPage.addClass('page-animating');
 
     // Set Transition Class
     this.fromPage.addClass(this.transitionOutEffect);
@@ -102,8 +102,8 @@ var EffecktPageTransitions = {
     this.isCurrentPageEnd = false;
     this.isNextPageEnd = false;
 
-    this.fromPage.removeClass('effeckt-page-animating effeckt-page-active ' + this.transitionOutEffect);//.hide();
-    this.toPage.removeClass('effeckt-page-animating ' + this.transitionInEffect);
+    this.fromPage.removeClass('page-animating page-active ' + this.transitionOutEffect);//.hide();
+    this.toPage.removeClass('page-animating ' + this.transitionInEffect);
 
     $("html").removeClass("md-perspective");
   }
