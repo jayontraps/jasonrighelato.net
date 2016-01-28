@@ -74,13 +74,6 @@ get_header("portfolio"); ?>
 
         </div>
 
-        <button id="js_trigger_transition"
-        class="effeckt-page-transition-button trigger-transition" 
-        data-effeckt-transition-in="slide-in-from-right" 
-        data-effeckt-transition-out="scale-down" 
-        data-effeckt-transition-page="page-single-item" 
-        data-effeckt-needs-perspective="true">Jason</button>
-    
     </div>
 
 </div>
@@ -96,11 +89,12 @@ get_header("portfolio"); ?>
 	
 
 
-<a href="#" class="effeckt-page-transition-button back-to-menu" id="js_back_to_menu"
-        data-effeckt-transition-in="slide-from-left" 
-        data-effeckt-transition-out="slide-to-right" 
-        data-effeckt-transition-page="page-1">
-        <svg class="icon icon-chevron-thin-left"><use xlink:href="#icon-chevron-thin-left"></use></svg></a>
+
+<a href="#" class="back-to-menu" id="js_back_to_menu">
+    <svg class="icon icon-chevron-thin-left"><use xlink:href="#icon-chevron-thin-left"></use></svg>
+</a>
+
+
 
 
 
