@@ -8,7 +8,8 @@ var wrapLetters = require('./modules/animations/wrapLetters');
 var animateHeading = require('./modules/animations/animateHeading');
 var whichTransitionEvent = require('./modules/animations/animation_utils/whichTransitionEvent');
 var whichAnimationEvent = require('./modules/animations/animation_utils/whichAnimationEvent');
-
+var getAnimationEvents = require('./modules/animations/animation_utils/getAnimationEvents');
+getAnimationEvents();
 /*
 get callbacks from css animations: https://davidwalsh.name/css-animation-callback
 
@@ -126,81 +127,82 @@ page_state = {
 				  .reveal( '.work_menu_link', { container: js_page_1 } );
 		}
 
+
+
+
+
+
+
+
+		function page_1_listeners (e) {
+
+			if (page_state.animate_to_item) {
+									
+				domEls.page_1
+					.removeClass('page-animating page-active');
+
+				domEls.page_2
+					.addClass('page-animating page-active slide-in-from-right');
+			}
+
+
+			if (page_state.animate_from_item) {	
+
+				domEls.page_2
+					.removeClass('page-animating page-active slide-to-right');
+
+				domEls.page_1
+					.removeClass('slide-from-left page-animating');	
+
+			}
+		}
+
+
+
+
+
+		function page_2_listeners(e) {
+
+			if (page_state.animate_to_item) {
+
+				$('#js_loading').remove();
+
+				domEls.page_1
+					.removeClass('scale-down');
+			
+				domEls.page_2
+					.removeClass('page-animating slide-in-from-right');
+
+				domEls.back_to_menu_btn
+					.addClass('on');					
+				
+			}
+		}
+
+
+
+		function myFunc () {
+			console.log('the start');
+		}
+
 		
-
-
-
-
-
 
 		/* listen for animationend on [data-page] */
 
 		// page-1 listner and callback
 		if ($(js_page_1).length > 0) {
-			
-			// store the animation / transition end event - add to global object? 
-			var theEvent = whichAnimationEvent();
-
-			// add listner and callback
-			theEvent && js_page_1.addEventListener(theEvent, function(e) {
-
-				if (e.target.id === 'js_page_1' && page_state.animate_to_item) {
-									
-					domEls.page_1.removeClass('page-animating page-active');
-
-					domEls.page_2.addClass('page-animating page-active slide-in-from-right');
-				}
-
-
-				
-				// add listner and callback - listen on animate_from_item state
-				if (e.target.id === 'js_page_1' && page_state.animate_from_item) {													
-					domEls.page_2
-						.removeClass('page-animating page-active slide-to-right');
-
-					domEls.page_1
-						.removeClass('slide-from-left page-animating');	
-				}
-			});
+			js_page_1.addEventListener(animationStart, myFunc, false);
+			js_page_1.addEventListener(animationEnd, page_1_listeners, false);
 		}
 
 
 		// page-2 listner and callback
-		if ($(js_page_2).length > 0) {
-			
-			var theAnimationEvent = whichAnimationEvent();
-
-			// add listner and callback - listen on animate_to_item state
-			theAnimationEvent && js_page_2.addEventListener(theAnimationEvent, function(e) {
-
-				if (e.target.id === 'js_page_2' && page_state.animate_to_item) {
-
-					$('#js_loading').remove();
-
-					domEls.page_1
-						.removeClass('scale-down');
-				
-					domEls.page_2
-						.removeClass('page-animating slide-in-from-right');
-
-					domEls.back_to_menu_btn
-						.addClass('on');					
-					
-				}
-
-				
-				// // add listner and callback - listen on animate_from_item state
-				// if (e.target.id === 'js_page_2' && page_state.animate_from_item) {													
-				// 	domEls.page_2.removeClass('page-animating page-active slide-to-right');
-
-				// 	domEls.page_1
-				// 		.removeClass('page-animating');
-					
-				// }
-
-
-			});
+		if ($(js_page_2).length > 0) {			
+			js_page_2.addEventListener(animationEnd, page_2_listeners, false);
 		}
+
+
+
 
 
 

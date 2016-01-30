@@ -6,7 +6,7 @@ module.exports = function renderTemplates(data) {
 	var imageUrl = data.acf.header_image.url;
 
 	function onComplete() {
-		// All set.. 
+		// All set.. fire page transitions
 		domEls.page_1.addClass('page-animating scale-down');
 	}
 
