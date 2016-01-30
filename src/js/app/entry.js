@@ -256,7 +256,6 @@ page_state = {
 
 		function page_1_anim_start_listeners (e) {
 			if (e.target.id === 'js_page_1') {
-				console.log('the start');
 				domEls.page_2
 					.addClass('page-animating page-active slide-in-from-right');
 			}			
