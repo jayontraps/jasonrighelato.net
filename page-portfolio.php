@@ -82,7 +82,9 @@ get_header("portfolio"); ?>
 
 <div class="single-item page" data-page="page-2" id="js_page_2">
 
-    <div id="js_page_single_item" class="page-wrap" ></div>
+    <div id="js_page_single_item" class="page-wrap">
+        <?php // include "inc/inc-dumby-content.php"; ?>
+    </div>
     <?php include "inc/inc-footer-list.php"; ?>
 
 </div>

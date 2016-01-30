@@ -134,19 +134,16 @@ page_state = {
 
 
 
-		function page_1_listeners (e) {
+		function page_1_anim_end_listeners (e) {
 
-			if (page_state.animate_to_item) {
+			if (e.target.id === 'js_page_1' && page_state.animate_to_item) {
 									
 				domEls.page_1
 					.removeClass('page-animating page-active');
-
-				domEls.page_2
-					.addClass('page-animating page-active slide-in-from-right');
 			}
 
 
-			if (page_state.animate_from_item) {	
+			if (e.target.id === 'js_page_1' && page_state.animate_from_item) {	
 
 				domEls.page_2
 					.removeClass('page-animating page-active slide-to-right');
@@ -158,12 +155,9 @@ page_state = {
 		}
 
 
+		function page_2_anim_end_listeners(e) {
 
-
-
-		function page_2_listeners(e) {
-
-			if (page_state.animate_to_item) {
+			if (e.target.id === 'js_page_2' && page_state.animate_to_item) {
 
 				$('#js_loading').remove();
 
@@ -180,25 +174,26 @@ page_state = {
 		}
 
 
-
-		function myFunc () {
-			console.log('the start');
+		function page_1_anim_start_listeners (e) {
+			if (e.target.id === 'js_page_1') {
+				console.log('the start');
+				domEls.page_2
+					.addClass('page-animating page-active slide-in-from-right');
+			}			
 		}
 
 		
 
-		/* listen for animationend on [data-page] */
-
 		// page-1 listner and callback
 		if ($(js_page_1).length > 0) {
-			js_page_1.addEventListener(animationStart, myFunc, false);
-			js_page_1.addEventListener(animationEnd, page_1_listeners, false);
+			js_page_1.addEventListener(animationStart, page_1_anim_start_listeners, false);
+			js_page_1.addEventListener(animationEnd, page_1_anim_end_listeners, false);
 		}
 
 
 		// page-2 listner and callback
 		if ($(js_page_2).length > 0) {			
-			js_page_2.addEventListener(animationEnd, page_2_listeners, false);
+			js_page_2.addEventListener(animationEnd, page_2_anim_end_listeners, false);
 		}
 
 
@@ -235,6 +230,9 @@ page_state = {
 			injectSpinner();
 
 			ajaxCall(request);
+
+			// local testing with dumby content
+			// domEls.page_1.addClass('page-animating scale-down');
 					
 			if (Modernizr.history) {
 			 	history.pushState(null, null, request.href);
