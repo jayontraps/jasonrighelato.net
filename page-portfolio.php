@@ -11,7 +11,7 @@ get_header("portfolio"); ?>
 
     <div class="page-wrap" id="page-wrap">
         
-        <div class="header-block"></div>
+       <!--  <div class="header-block"></div> -->
         
         <header class="header">
 

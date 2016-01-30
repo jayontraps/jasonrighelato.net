@@ -14,11 +14,11 @@
 	.header {
 		// overflow: auto;
 		// margin-bottom: $section-spacing;
-		width: 99%;
-		position: fixed;
-		top: 0;
-		left: 0;																			
-		z-index: -1;	
+		// width: 99%;
+		// position: fixed;
+		// top: 0;
+		// left: 0;																			
+		// z-index: -1;	
 		
 	}	
 
@@ -59,7 +59,15 @@
 
 .site-intro {
 	width: 100%;
-  	max-width: 800px;
+  	max-width: 665px;
   	text-align: center;
-  	margin: 0 auto;
+  	margin: 0 auto $section-spacing auto;
 }
+
+
+
+
+
+
+
+
