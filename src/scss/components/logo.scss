@@ -1,0 +1,28 @@
+
+.logo-wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.logo {
+	width: 100%;
+	max-width: 600px;
+	margin: 0 auto;
+	padding-bottom: 1rem;
+}
+
+
+.logo-path {
+
+	 // fill: none; 
+	 // fill: #000000; 
+	 stroke: $bgc; 
+	 stroke-width: 1;
+	 stroke-miterlimit: 10;
+
+	 &.logo-dot {
+	 	stroke-width: 0;
+	 }
+
+}
+

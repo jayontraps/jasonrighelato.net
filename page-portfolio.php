@@ -7,25 +7,31 @@ get_header("portfolio"); ?>
 
 
 <div id="js_page_1" data-page="page-1" class="page-active page">
-    <!-- <div class="page-border"></div> -->
 
     <div class="page-wrap" id="page-wrap">
-        
-       <!--  <div class="header-block"></div> -->
+
+        <div class="site-brd"></div>
         
         <header class="header">
 
             <div class="wrapper">
-                
-                <h1 class="site-title" id="js_animate_heading">Jason&nbsp;Righelato</h1>
 
-                <!--     <h1 id="js_animate_heading">Jason Righelato</h1> -->
+                <div class="logo-wrapper">
+
+                    <?php include "inc/logo-inline-svg.php"; ?>
+
+                </div>
+                
+               <!--  <h1 class="site-title" id="js_animate_heading">Jason&nbsp;Righelato</h1> -->
+
+
+
 
                 <div class="site-intro">
                 
                     <h2><?php echo get_bloginfo ( 'description' ); ?></h2>
 
-                    <p>A freelance front-end web developer with over 5 years professional experience, I work with agencies, small businesses, arts groups and charities. I design and build fast loading, responsive websites with modular &amp; maintainable code. </p>
+                    <p>With over 5 years professional experience, I work with agencies, small businesses, arts groups and charities. I design and build fast loading, responsive websites with modular &amp; maintainable code. </p>
 
 
                 </div>
@@ -82,7 +88,10 @@ get_header("portfolio"); ?>
 
 <div class="single-item page" data-page="page-2" id="js_page_2">
 
-    <div id="js_page_single_item" class="page-wrap">
+    <div class="site-brd"></div>
+
+    <div id="js_page_single_item" class="page-wrap">        
+
         <?php // include "inc/inc-dumby-content.php"; ?>
     </div>
     <?php include "inc/inc-footer-list.php"; ?>

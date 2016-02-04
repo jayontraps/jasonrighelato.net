@@ -40,6 +40,10 @@
 <body <?php body_class(); ?>>
 
 <?php include "inc/inc-svgdefs.php"; ?>
+
+<div class="site-brd"></div>
+
+
 	
 
 

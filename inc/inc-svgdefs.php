@@ -1,4 +1,4 @@
-<svg style="display: none">
+<svg display="none">
 
     <defs>
 
