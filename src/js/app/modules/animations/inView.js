@@ -14,7 +14,7 @@ module.exports = function inView(container, $el) {
 		theOffset = 0;
 
 	function onScroll() {
-		latestKnownScrollY = $(js_page_1).scrollTop();
+		latestKnownScrollY = $(page).scrollTop();
 		requestTick();
 	}
 	function requestTick() {
